@@ -1,0 +1,129 @@
+
+
+
+// ================================================================
+
+// OWL SLIDER NAVIGATION STYLES
+
+// ================================================================
+
+
+
+$slider-nav-size:                           6em;
+$slider-dots-size:                          10px;
+
+
+
+// owl slider navigaton containers
+// -------------------------------
+.owl-theme {
+
+  .owl-dots {
+    @include absolute(bottom 0 left 0);
+
+    width: 100%;
+  }
+
+  .owl-nav {
+    @include absolute (top 50%);
+    @include size(100%, 0);
+
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+
+
+// ----------------------------------------------------------------
+
+
+
+// owl slider navigation arrows
+// ----------------------------
+.owl-theme .owl-nav {
+
+  [class*='owl-'] {
+    display: inline-block;
+    cursor: pointer;
+
+    border: none;
+    padding: 0;
+
+    font-size: $slider-nav-size;
+    line-height: 1;
+
+    color: rgba(var(--color-contrast), 0.5);
+    background: none;
+    transition: all var(--anim-dur) var(--anim-ease);
+
+    &:hover {
+      text-decoration: none;
+      color: var(--color-contrast);
+    }
+  }
+
+  .owl-prev,
+  .owl-next {
+    @include absolute(top 0);
+    transform: translateY(-50%);
+  }
+
+  .owl-prev {
+    left: 3%;
+  }
+
+  .owl-next {
+    right: 3%;
+  }
+
+  .disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+}
+
+
+
+// ----------------------------------------------------------------
+
+
+
+// owl slider dots
+// ---------------
+.owl-theme .owl-dots {
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.owl-carousel button.owl-dot {
+  border: none;
+  padding: 0;
+  color: inherit;
+  background: none;
+}
+
+.owl-theme .owl-dots .owl-dot {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+
+  position: relative;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+  @include size($slider-dots-size);
+
+  display: block;
+  margin: 5px 7px;
+
+  border-radius: 30px;
+  background: var(--color-contrast);
+
+  -webkit-backface-visibility: visible;
+  transition: opacity 200ms ease;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: var(--color-main);
+}
