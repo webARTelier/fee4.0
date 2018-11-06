@@ -1,0 +1,50 @@
+
+
+
+// ================================================================
+
+// INTEGRATED INPUT UNIT DISPLAY
+// -----------------------------
+// NOTE: this partial uses the variables from '_form_inputs.scss'
+// and therefore must be included after '_form_inputs.scss'!
+
+// ================================================================
+
+
+
+%unit {
+  position: relative;
+  display: block;     // fix for firefox absolute positioning bug
+
+  // unit display
+  // ------------
+  &:after {
+    @include typo-bold;
+    @include absolute(top 1px right 1px bottom 1px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-top-right-radius: var(--input-border-radius);
+    border-bottom-right-radius: var(--input-border-radius);
+
+    color: var(--input-color);
+    background-color: transparent;
+  }
+}
+
+.unit-euro {
+  @extend %unit;
+
+  &:after {
+    content: '€';
+    width: 1.5em;
+  }
+
+  // shelter space for unit display
+  // ------------------------------
+  input {
+    padding-right: 1.6em;
+  }
+}

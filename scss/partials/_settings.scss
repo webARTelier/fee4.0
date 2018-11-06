@@ -1,0 +1,258 @@
+
+
+
+// ================================================================
+
+// PROJECT SETTINGS
+
+// ================================================================
+
+
+
+// SCSS VARIABLES
+// ==============
+
+// paths and breakpoints can not be set as css variables
+// so we define them in scss
+// -----------------------------------------------------
+
+// paths
+// -----
+$path-images:                               '../images/';
+$path-fonts:                                '../fonts/';
+
+
+
+// breakpoints
+// NOTE: value defines maximum width of viewport
+// ---------------------------------------------
+$bp: (
+  'tiny':				                    479px,
+  'small':                                  767px,
+  'medium':                                 989px,
+  'large':                                  1199px,
+
+  'navigation':                             989px,
+  'ultra':                                  1920px,
+);
+
+
+
+// ================================================================
+
+
+
+// CSS VARIABLES
+// =============
+
+// property values are set as native css variables
+// -----------------------------------------------
+
+:root {
+
+  // provide current viewport name for javascript
+  // --------------------------------------------
+  --vp-name:                                tiny;
+
+
+
+  // provide current navigation state for javascript
+  // -----------------------------------------------
+  --navstate:                               mobile;
+
+
+  // set minimum layout left/right space
+  // -----------------------------------
+  --layout-space-x:                         10px;
+
+
+
+  // set minimum content width according to layout space
+  // (assumed mimimum viewport = 320px for iPhone 5)
+  // ---------------------------------------------------
+  --content-minwidth:                       calc(320px - (var(--layout-space-x) * 2));
+
+
+
+  // set maximum content width
+  // -------------------------
+  --content-maxwidth:                       300px;
+
+
+
+  // set default vertical space between content elements
+  // NOTE: do not muddle up with grid gutters!
+  // ---------------------------------------------------
+  --content-space-y:                        30px;
+
+
+
+  // set default grid gutters
+  // ------------------------
+  --grid-gutter-row:                        10px;
+  --grid-gutter-column:                     var(--grid-gutter-row);
+
+
+
+  // set form grid gutters
+  // ---------------------
+  --grid-gutter-form-row:                   10px;
+  --grid-gutter-form-column:                var(--grid-gutter-form-row);
+
+
+
+  // set gallery grid gutters
+  // ------------------------
+  --grid-gutter-gallery-row:                10px;
+  --grid-gutter-gallery-column:             var(--grid-gutter-gallery-row);
+
+
+
+  // set default copy font size
+  // --------------------------
+  --fontsize-copy:                          15px;
+
+
+
+  // set minimum size for touchable elements
+  // ---------------------------------------
+  --size-touchable:                         44px;
+
+
+
+  // border radius
+  // -------------
+  --border-radius:                          0.25em;
+  --border-radius-modal:                    30px;
+
+
+
+  // set minimum width for text columns
+  // ----------------------------------
+  --width-textcolumns:                      26em;
+
+
+
+  // animations
+  // ----------
+  --anim-dur:			                    0.3s;
+  --anim-ease:		                        ease-out;
+
+
+
+  // z-indices
+  // ---------
+  --z-default:                                1;
+  --z-slider:                                 100;
+  --z-slider-settings:                        200;
+  --z-lightbox-hover:                         300;
+  --z-totop:                                  400;
+  --z-sitecontrols:                           500;
+  --z-navigation-main:                        600;
+  --z-search:                                 700;
+  --z-tooltips:                               800;
+  --z-overlays:                               900;
+  --z-modals:                                 1000;
+  --z-cookiebanner:                           1100;
+}
+
+
+
+// ----------------------------------------------------------------
+
+
+
+// viewport 'small'
+// ----------------
+@include vp-small {
+
+  :root {
+    --vp-name:                              small;
+    --content-maxwidth:                     420px;
+    --content-space-y:                      40px;
+    --grid-gutter-row:                      15px;
+    --grid-gutter-form-row:                 10px;
+    --grid-gutter-gallery-row:              10px;
+  }
+}
+
+
+
+// ----------------------------------------------------------------
+
+
+
+// viewport 'medium'
+// -----------------
+@include vp-medium {
+
+  :root {
+    --vp-name:                              medium;
+    --layout-space-x:                       50px;
+    --content-maxwidth:                     1140px;
+    --content-space-y:                      50px;
+    --grid-gutter-row:                      20px;
+    --grid-gutter-form-row:                 15px;
+    --grid-gutter-gallery-row:              15px;
+    --fontsize-copy:                        17px;
+  }
+}
+
+
+
+// ----------------------------------------------------------------
+
+
+
+// viewport 'large'
+// ----------------
+@include vp-large {
+
+  :root {
+    --vp-name:                              large;
+    --layout-space-x:                       70px;
+    --content-maxwidth:                     1140px;
+    --content-space-y:                      60px;
+    --grid-gutter-row:                      25px;
+    --grid-gutter-form-row:                 15px;
+    --grid-gutter-gallery-row:              15px;
+    --fontsize-copy:                        17px
+  }
+}
+
+
+
+// ----------------------------------------------------------------
+
+
+
+// viewport 'huge'
+// ---------------
+@include vp-huge {
+
+  :root {
+    --vp-name:                              huge;
+    --layout-space-x:                       100px;
+    --content-maxwidth:                     1140px;
+    --content-space-y:                      70px;
+    --grid-gutter-row:                      30px;
+    --grid-gutter-form-row:                 15px;
+    --grid-gutter-gallery-row:              15px;
+    --fontsize-copy:                        17px;
+  }
+}
+
+
+
+// ----------------------------------------------------------------
+
+
+
+// navigation viewport 'desktop'
+// -----------------------------
+@include vp-nav-desktop {
+
+  :root {
+    --navstate:                             desktop;
+  }
+}

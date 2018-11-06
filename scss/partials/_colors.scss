@@ -1,0 +1,103 @@
+
+
+
+// ================================================================
+
+// PROJECT COLORS FILE
+// -------------------
+
+// this file contains color definitions
+
+// NOTE: to keep color changes manageable
+// color definintions are split into two steps:
+// - STEP I:    define colors and corresponding names
+// - STEP II :  assign color names to color scheme roles
+
+// ================================================================
+
+
+
+// STEP I: define colors and corresponding names
+// ---------------------------------------------
+
+// main colors
+// -----------
+$color-fee-blue:                            #3d5967;
+$color-fee-blue-hover:                      shade($color-fee-blue, 20);
+
+$color-fee-sand:                            #eddfc5;
+$color-fee-sand-hover:                      shade($color-fee-sand, 20);
+$color-fee-sand-light:                      tint($color-fee-sand, 80);
+
+$color-red:                                 #bf0620;    // used as highlight color
+
+$color-copy:                                tint(black, 33);
+
+
+
+// ================================================================
+
+
+
+// STEP II: assign color names to color scheme roles
+// NOTE: role colors are set as native css variables
+// NOTE 2: since all elements work with role colors, the
+// definitions below are mandatory!
+// -----------------------------------------------------
+
+// color scheme main roles
+// -----------------------
+:root {
+  --color-main:                             #{$color-fee-blue};
+  --color-main-hover:                       #{$color-fee-blue-hover};
+  --color-main-font:                        #{$color-fee-blue};
+
+  --color-contrast:                         #{$color-fee-sand};
+  --color-contrast-hover:                   #{$color-fee-sand-hover};
+  --color-contrast-font:                    #{$color-fee-sand};
+  --color-contrast-light:                   #{$color-fee-sand-light};
+
+  --color-highlight:                        #{$color-red};
+
+  --color-copy:                             #{$color-copy};
+
+  --color-link:                             #{$color-fee-blue};
+  --color-link-hover:                       #{$color-fee-blue-hover};
+
+  --color-page-bg:                          white;
+}
+
+
+
+// ================================================================
+
+
+
+// UTILITY COLOR CLASSES
+// =====================
+
+// shadows and gradients
+// ---------------------
+.u-shadow-text {
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2) !important;
+}
+
+.u-shadow-box {
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1) !important;
+}
+
+.u-shadow-modal {
+  box-shadow: 0 3px 8px rgba(0,0,0,0.4) !important;
+}
+
+
+
+// background colors
+// -----------------
+.u-bg-main {
+  background-color: --color-main !important;
+}
+
+.u-bg-contrast {
+  background-color: --color-contrast !important;
+}

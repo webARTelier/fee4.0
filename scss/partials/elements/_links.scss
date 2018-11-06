@@ -1,0 +1,40 @@
+
+
+
+// ================================================================
+
+// DEFAULT LINK STYLING
+
+// ================================================================
+
+
+
+// default
+// -------
+@mixin link-default {
+  color: var(--color-link);
+
+  // hover state only in desktop view
+  // --------------------------------
+  @include vp-large-up {
+
+    &:hover {
+      color: var(--color-link-hover);
+      text-decoration: underline;
+    }
+  }
+}
+
+
+
+// neutral
+// -------
+@mixin link-neutral {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}

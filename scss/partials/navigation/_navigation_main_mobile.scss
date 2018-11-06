@@ -1,0 +1,263 @@
+
+
+
+// ================================================================
+
+// MOBILE NAVIGATION STYLES
+
+// ================================================================
+
+
+
+// mobile navigation settings
+// --------------------------
+
+// off canvas
+// ----------
+$width-offcanvas:                           goldenratio-b(100vw);
+$width-offcanvas-tiny:                      50vw;
+
+
+
+// show/hide level icons
+// ---------------------
+$size-nav-nextlevel-mobile:                 var(--size-touchable);      // size of clickable area
+$size-nav-nextlevel-icon-mobile:            8px;                        // size of icon
+
+
+
+// main level mobile
+// -----------------
+$space-nav-mainlevel-item-mobile:           2px;                        // free space between items
+$padding-nav-mainlevel-mobile:              20px;                       // space nav items <=> navigation border
+
+
+
+// sub levels mobile
+// -----------------
+$indent-nav-sublevel-mobile:                20px;                       // indent for sublevel navigation items
+$padding-nav-sublevel-mobile:               20px;                       // padding for sublevel navigation items
+
+
+
+// ----------------------------------------------------------------
+
+
+
+// main navigation items
+// ---------------------
+@include vp-nav-mobile {
+
+
+
+  // off canvas container
+  // --------------------
+  .container-navigation-offcanvas {
+    @include fixed(top 0 right 0);
+
+    z-index: z('navigation-main');
+
+    display: flex;
+    flex-direction: column;
+
+    width: $width-offcanvas-tiny;
+    height: 100%;
+    background-color: white;
+
+    shadow-box: -3px 0px 5px 0px rgba(50, 50, 50, 0.3);
+    overflow: auto;
+
+    transition: all var(--anim-dur) var(--anim-ease);
+    transform: translateX(110%);
+
+    @include vp-small-up {
+      width: $width-offcanvas;
+    }
+
+    &.is-visible {
+      transform: translateX(0);
+    }
+  }
+
+
+
+  // icon 'close off canvas'
+  // -----------------------
+  .icon-close-menu {
+    align-self: flex-end;
+    margin: 10px 0;
+
+    .navigation-icon {
+      @include size(50%);
+
+      fill: var(--color-main);
+    }
+  }
+
+
+
+  // main level
+  // ----------
+  .container-navigation-items {
+    position: relative;
+    z-index: z('navigation-main');
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .navigation-item-mainlevel {
+      display: flex;
+      flex: 0 1 auto;
+      flex-wrap: wrap;
+
+      position: relative;
+      cursor: pointer;
+
+      border-bottom: $space-nav-mainlevel-item-mobile solid white;
+      width: 100%;
+
+      font-family: 'copy-bold', sans-serif;
+      font-size: 16px;
+      text-transform: uppercase;
+
+      background-color: transparent;
+
+      &:last-child {
+        border: none
+      }
+
+      a {
+        flex: 0 1 auto;
+        position: relative;
+
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: $padding-nav-mainlevel-mobile;
+        width: calc(100% - var(--size-touchable));
+
+        text-decoration: none;
+        color: var(--color-copy);
+      }
+
+      &.is-active {
+        background-color: var(--color-main);
+
+        a {
+          color: rgba(white, 0.5);
+        }
+      }
+
+
+
+      // opened sublevel
+      // --------------
+      &.is-open {
+
+        & > .navigation-sublevel {
+          display: flex;
+        }
+      }
+    }
+
+    .navigation-item-icon-touchzone {
+      @include size($size-nav-nextlevel-mobile);
+
+      display: flex;
+      flex: 0 0 auto;
+      margin: auto;
+
+      .navigation-item-icon {
+        @include size($size-nav-nextlevel-icon-mobile);
+
+        display: block;
+        margin: auto;
+        fill: var(--color-main);
+
+        transition: all var(--anim-dur) var(--anim-ease);
+      }
+    }
+
+    .navigation-item-line {
+      @include absolute(bottom 0 left 0);
+
+      border-bottom: 1px solid grey(10);
+      width: 100%;
+    }
+  }
+
+
+
+  // sub level items
+  // ---------------
+  .navigation-sublevel {
+    display: none;
+    flex-direction: column;
+    flex: 0 1 100%;
+
+    .navigation-item-sublevel {
+      display: flex;
+      flex-wrap: wrap;
+
+      text-transform: none;
+
+      position: relative;
+      //background-color: white;
+
+      a {
+        display: flex;
+        padding-left: ($padding-nav-sublevel-mobile + $indent-nav-sublevel-mobile);
+        color: var(--color-main);
+      }
+
+      .navigation-item-icon {
+        fill: rgba(white, 0.75);
+      }
+
+      &.is-active {
+        background-color: var(--color-main);
+
+        & > a {
+          color: white;
+        }
+
+        .navigation-item-icon {
+          fill: white;
+        }
+      }
+
+      &.is-open {
+
+        .navigation-sublevel {
+          display: flex;
+        }
+      }
+    }
+
+    .navigation-item-line {
+      left: ($padding-nav-sublevel-mobile + $indent-nav-sublevel-mobile);
+      border-bottom: 1px solid grey(10);
+      width: calc(100% - #{$padding-nav-sublevel-mobile} - #{$indent-nav-sublevel-mobile});
+  }
+
+
+
+  // third level items
+  // -----------------
+  .navigation-sublevel {
+
+    .navigation-item-sublevel {
+      background-color: transparent;
+
+      a {
+        padding-left: ($padding-nav-sublevel-mobile + ($indent-nav-sublevel-mobile * 2));
+      }
+    }
+
+    .navigation-item-line {
+      left: ($padding-nav-sublevel-mobile + ($indent-nav-sublevel-mobile * 2));
+      width: calc(100% - #{$padding-nav-sublevel-mobile} - (#{$indent-nav-sublevel-mobile} * 2))
+  }
+}
+}
+}

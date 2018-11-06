@@ -1,0 +1,121 @@
+
+
+
+// ================================================================
+
+// FORM LAYOUTS
+// ------------
+// default form layout styles
+
+// NOTE: this partial uses the variables from '_form_inputs.scss'
+// and therefore must be included after '_form_inputs.scss'!
+
+// ================================================================
+
+
+
+:root {
+  --label-width:                            6em;
+  --split-input-gutter:                     3px;
+}
+
+
+
+// container for form columns
+// --------------------------
+.o-container-form-columns {
+  @include grid(1, 1, 2, 2, 2);
+
+  grid-gap: var(--grid-gutter-column) var(--grid-gutter-row);
+}
+
+
+
+// -----------------------------------------------------------------------
+
+
+
+// container for form inputs
+// -------------------------
+.o-container-form {
+
+  // do not stretch in form columns
+  // ------------------------------
+  align-self: start;
+
+  display: grid;
+  grid-template-columns: var(--label-width) 1fr;
+  grid-gap: var(--grid-gutter-form-column) var(--grid-gutter-form-row);
+  align-items: center;
+}
+
+
+
+// -----------------------------------------------------------------------
+
+
+
+// custom input layouts
+// --------------------
+.o-container-radiobuttons {
+  display: flex;
+
+  // make height match the height of other inputs
+  // --------------------------------------------
+  border: var(--input-border-width) solid transparent;
+  padding-top: var(--input-padding-y);
+  padding-bottom: var(--input-padding-y);
+}
+
+
+
+// split inputs
+// ------------
+%split-input-all {
+  display: grid;
+  grid-column-gap: var(--split-input-gutter);
+}
+
+.u-split-input-40-60 {
+  @extend %split-input-all;
+
+  grid-template-columns: 4fr 6fr;
+}
+
+.u-split-input-60-40 {
+  @extend %split-input-all;
+
+  grid-template-columns: 6fr 4fr;
+}
+
+.u-split-input-30-30-40 {
+  @extend %split-input-all;
+
+  grid-template-columns: 3fr 3fr 4fr;
+}
+
+
+
+// span label & input column
+// -------------------------
+.u-span-label-input {
+  grid-column: 1 /span 2;
+}
+
+
+
+// -----------------------------------------------------------------------
+
+
+
+// form spacer row
+// ---------------
+.u-form-spacer {
+  grid-column: 1 /span 2;
+
+  // make height match the height of other inputs
+  // --------------------------------------------
+  border: var(--input-border-width) solid transparent;
+  padding-top: var(--input-padding-y);
+  padding-bottom: var(--input-padding-y);
+}

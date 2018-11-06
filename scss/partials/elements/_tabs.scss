@@ -1,0 +1,78 @@
+
+
+
+// ================================================================
+
+// TAB ELEMENT STYLES
+
+// ================================================================
+
+
+
+// tab navigation
+// --------------
+.tabs-navigation {
+  display: flex;
+  flex-direction: column;
+
+  @include vp-medium-up {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+
+.tabs-navigation__item {
+  padding: 0.5em 1em;
+  text-align: center;
+
+  color: white;
+  background-color: var(--color-main);
+
+  transition: all var(--anim-dur) var(--anim-ease);
+  cursor: pointer;
+
+  @include vp-medium-up {
+    margin-right: 0.2em;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &:hover {
+    color: var(--color-copy);
+    background-color: var(--color-contrast);
+  }
+
+  &.is-active {
+    color: var(--color-copy);
+    background-color: var(--color-contrast);
+  }
+}
+
+
+
+// tab contents
+// ------------
+.tabs-content__item {
+  display: none;
+
+  padding: 1em;
+
+  color: var(--color-copy);
+  background-color: var(--color-contrast);
+
+  pointer-events: none;
+
+  @include vp-medium-up {
+    border-top-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+  }
+
+  &.is-active {
+    display: block;
+  }
+}

@@ -1,0 +1,111 @@
+
+
+
+// ================================================================
+
+// BASIC LAYOUT FILE
+// -----------------
+// this file contains very fundamental page layout styles
+// that normally should not be changed for client's pages
+
+// ================================================================
+
+
+
+// basic layout: header, content, footer
+// -------------------------------------
+body {
+  display: grid;
+  grid-gap: 0;
+
+  grid-template-areas:
+    'page-header'
+    'page-content'
+    'page-footer';
+
+  grid-template-rows: auto 1fr auto;
+}
+
+.o-wrapper-header {
+  grid-area: page-header;
+}
+
+.o-wrapper-content {
+  grid-area: page-content;
+}
+
+.o-wrapper-footer {
+  grid-area: page-footer;
+}
+
+
+
+// ----------------------------------------------------------------
+
+
+
+// layout rows
+// -----------
+.o-row {
+  position: relative;
+
+  display: grid;
+  grid-gap: 0;
+
+  grid-template-areas: 'row-space-left row-content row-space-right';
+
+  grid-template-columns:
+    minmax(var(--layout-space-x), 1fr)
+    minmax(var(--content-minwidth), var(--content-maxwidth))
+    minmax(var(--layout-space-x), 1fr);
+}
+
+
+
+
+// ----------------------------------------------------------------
+
+
+
+// content layouts
+// ---------------
+.o-content {
+  position: relative;
+  display: block;
+}
+
+.o-content--centered {
+  grid-area: row-content;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.o-content--fullwidth {
+  grid-column: 1 /span 3;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+
+
+// ----------------------------------------------------------------
+
+
+
+// UTILITY LAYOUT CLASSES
+// ======================
+
+// default vertical content space
+// ------------------------------
+.u-space-top {
+  padding-top: var(--content-space-y) !important;
+}
+
+.u-space-bottom {
+  padding-bottom: var(--content-space-y) !important;
+}
+
+.u-space-topbottom {
+  padding-top: var(--content-space-y) !important;
+  padding-bottom: var(--content-space-y) !important;
+}

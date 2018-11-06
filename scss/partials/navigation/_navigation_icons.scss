@@ -1,0 +1,38 @@
+
+
+
+// ================================================================
+
+// NAVIGATION ICONS
+
+// ================================================================
+
+
+
+.container-navigation {
+  display: flex;
+}
+
+.navigation-icon-touchzone {
+  @include size(--var(--size-touchable));
+
+  display: flex;
+  cursor: pointer;
+}
+
+.container-navigation-icons {
+
+  // never show in desktop navigation mode
+  // -------------------------------------
+  @include vp-nav-desktop {
+    display: none;
+  }
+}
+
+.navigation-icon {
+  @include size(50%);
+
+  margin: 10px auto;
+  fill: var(--color-main);
+  cursor: pointer;
+}

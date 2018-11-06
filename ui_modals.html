@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="your, keywords, here">
+    <meta name="description" content="your description here">
+
+    <title>FEE | Front End Experience</title>
+
+    <link rel="stylesheet" href="css/main.css">
+
+  </head>
+  <body>
+
+    <!-- header section wrapper -->
+    <div class="o-wrapper-header">
+
+
+
+    </div>
+    <!-- end header section wrapper -->
+
+
+
+    <!-- ====================================================== -->
+
+
+
+    <!-- content section wrapper -->
+    <div class="o-wrapper-content">
+
+      <div class="o-row">
+
+        <div class="o-content o-content--centered u-space-topbottom">
+
+          <div class="c-intro">
+            <h1>Modals</h1>
+          </div>
+
+          <button class="c-button js-openModal" data-target=".test">Modal öffnen</button>
+
+        </div>
+
+      </div>
+
+
+    </div>
+    <!-- end content section wrapper -->
+
+
+
+    <!-- ====================================================== -->
+
+
+
+    <!-- modal 'test' -->
+    <div class="c-modal test">
+      <div class="c-modal__close js-closeModal">
+        <svg class="c-modal__icon"><use xlink:href="images/icons.svg#icon-close"></use></svg>
+      </div>
+      <h2>Test-Modal</h2>
+      <p>Hier steht der Modal-Text</p>
+      <p>&nbsp;</p>
+      <a class="js-switchModal" href="javascript:;" data-target=".switch">» anderes Modal öffnen</a>
+    </div>
+    <!-- end modal 'test' -->
+
+    <!-- modal 'switch' -->
+    <div class="c-modal switch">
+      <div class="c-modal__close js-closeModal">
+        <svg class="c-modal__icon"><use xlink:href="images/icons.svg#icon-close"></use></svg>
+      </div>
+      <h2>Anderes Modal</h2>
+      <p>Hier steht der Modal-Text</p>
+      <p>&nbsp;</p>
+      <a class="js-switchModal" href="javascript:;" data-target=".test">« zurück zum ersten Modal</a>
+    </div>
+    <!-- end modal 'switch' -->
+
+
+
+    <!-- overlay for closing modals -->
+    <div class="c-pageoverlay js-closeModal" onclick=""></div>
+    <!-- end overlay for closing modals -->
+
+
+
+    <!-- ====================================================== -->
+
+
+
+    <!-- footer section wrapper -->
+    <div class="o-wrapper-footer">
+
+
+
+    </div>
+    <!-- end footer section wrapper -->
+
+    <!-- importing required javascripts -->
+    <script src="js/custom_min.js"></script>
+
+    <!-- show viewport size in browser (for development only) -->
+    <script src="js/dev_pageinfos.js"></script>
+
+  </body>
+</html>

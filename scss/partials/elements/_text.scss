@@ -1,0 +1,47 @@
+
+
+
+// ================================================================
+
+// TEXT/MEDIA ELEMENT STYLES
+
+// ================================================================
+
+
+
+// text container
+// --------------
+.c-text {
+
+  a {
+    @include link-default;
+  }
+
+  ul {
+    @include list-standard;
+  }
+
+  ol {
+    @include list-decimal;
+  }
+
+  table {
+    @include table-content;
+  }
+}
+
+
+
+// -----------------------------------------------------------------------
+
+
+
+// text in columns
+// ---------------
+.c-text--columns {
+  column-count: 2;
+  column-width: var(--width-textcolumns);
+  column-gap: var(--grid-gutter-column);
+
+  padding-bottom: 1em;
+}

@@ -1,0 +1,179 @@
+
+
+
+// ================================================================
+
+// PURE CSS TOOLTIPS
+
+// ================================================================
+
+
+:root {
+  --tooltip-distance:                         5px;
+  --tooltip-triangle-size:                    8px;
+  --tooltip-color:                            white;
+  --tooltip-color-bg:                         var(--color-main);
+}
+
+
+
+%tooltip-all {
+  position: relative;
+  cursor: pointer;
+
+  // tooltip content presentation
+  // ----------------------------
+  &:after {
+    border-radius: var(--border-radius);
+    padding: 3px 8px 5px;
+
+    font-size: 14px;
+    line-height: 1.2;
+    white-space: nowrap;
+
+    color: var(--tooltip-color);
+    background-color: var(--tooltip-color-bg);
+  }
+
+  // hide tooltip when not hovered
+  // -----------------------------
+  &:before,
+  &:after {
+    z-index: var(--z-tooltips);
+    visibility: hidden;
+    opacity: 0;
+
+    transition: opacity var(--anim-dur) var(--anim-ease);
+  }
+
+  // show tooltip when hovered
+  // -------------------------
+  &:hover {
+
+    &:before,
+    &:after {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+
+
+// ----------------------------------------------------------------
+
+
+
+[data-tooltip-right] {
+  @extend %tooltip-all;
+
+  // tooltip triangle
+  // ----------------
+  &:before {
+    @include absolute(top 50%);
+    @include triangle(left, 6px, var(--color-main));
+
+    right: calc((var(--tooltip-distance) + var(--tooltip-triangle-size)) * -1);
+    transform: translateY(-50%);
+  }
+
+  // tooltip content
+  // ---------------
+  &:after {
+    @include absolute(top 50%);
+
+    left: calc(100% + var(--tooltip-distance) + var(--tooltip-triangle-size));
+    content: attr(data-tooltip-right);
+    transform: translateY(-50%);
+  }
+}
+
+
+
+// ----------------------------------------------------------------
+
+
+
+[data-tooltip-left] {
+  @extend %tooltip-all;
+
+  // tooltip triangle
+  // ----------------
+  &:before {
+    @include absolute(top 50%);
+    @include triangle(right, 6px, var(--color-main));
+
+    left: calc((var(--tooltip-distance) + var(--tooltip-triangle-size)) * -1);
+    transform: translateY(-50%);
+  }
+
+  // tooltip content
+  // ---------------
+  &:after {
+    @include absolute(top 50%);
+
+    right: calc(100% + var(--tooltip-distance) + var(--tooltip-triangle-size));
+    content: attr(data-tooltip-left);
+    transform: translateY(-50%);
+  }
+}
+
+
+
+// ----------------------------------------------------------------
+
+
+
+[data-tooltip-top] {
+  @extend %tooltip-all;
+
+  // tooltip triangle
+  // ----------------
+  &:before {
+    @include absolute(left 10%);
+    @include triangle(down, 6px, var(--color-main));
+
+    top: calc(((var(--tooltip-distance) + var(--tooltip-triangle-size)) * -1));
+    transform: translateX(-50%);
+  }
+
+  // tooltip content
+  // ---------------
+  &:after {
+    @include absolute(left 10%);
+
+    bottom: calc(100% + var(--tooltip-distance) + var(--tooltip-triangle-size));
+    content: attr(data-tooltip-top);
+    transform: translateX(-50%);
+  }
+}
+
+
+
+// ----------------------------------------------------------------
+
+
+
+[data-tooltip-bottom] {
+  @extend %tooltip-all;
+
+  // tooltip triangle
+  // ----------------
+  &:before {
+    @include absolute(left 10%);
+    @include triangle(up, 6px, var(--color-main));
+
+    bottom: calc(((var(--tooltip-distance) + var(--tooltip-triangle-size)) * -1));
+    transform: translateX(-50%);
+  }
+
+  // tooltip content
+  // ---------------
+  &:after {
+    @include absolute(left 10%);
+
+    top: calc(100% + var(--tooltip-distance) + var(--tooltip-triangle-size));
+    content: attr(data-tooltip-bottom);
+    transform: translateX(-50%);
+  }
+}

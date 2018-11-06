@@ -1,0 +1,49 @@
+
+
+
+// ================================================================
+
+// 'SCROLL TO TOP' ELEMENT
+
+// ================================================================
+
+
+
+.c-totop {
+  @include fixed(bottom 30px right 30px);
+  @include size(var(--size-touchable));
+
+  z-index: z('totop');
+  opacity: 0;
+  cursor: pointer;
+  display: flex;
+
+  border: 1px solid var(--color-contrast);
+  border-radius: 0.25em;
+
+  background-color: var(--color-main);
+
+  transform: scale(0);
+  transition: all var(--anim-dur) var(--anim-ease);
+
+  &:hover {
+    border-color: var(--color-main);
+    background-color: var(--color-contrast);
+
+    svg {
+      fill: var(--color-main);
+    }
+  }
+
+  &.is-visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  c-totop__icon {
+    @include size(33%);
+
+    margin: auto;
+    fill: var(--color-contrast);
+  }
+}

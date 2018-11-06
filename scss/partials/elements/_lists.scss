@@ -1,0 +1,94 @@
+
+
+
+// ================================================================
+
+// LIST STYLINGS
+
+// ================================================================
+
+
+
+// default: no list stylings
+// -------------------------
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+
+
+// -----------------------------------------------------------------------
+
+
+
+// browser standard lists
+// ----------------------
+@mixin list-standard {
+  margin-bottom: 1em;
+  padding-left: 1.2em;
+
+  li {
+    margin-bottom: 0.3em;
+    list-style: outside disc;
+  }
+}
+
+
+// -----------------------------------------------------------------------
+
+
+
+// ordered lists
+// -------------
+@mixin list-decimal {
+  display: table;
+  margin: 1em 0;
+  padding: 0;
+  counter-reset: olc;
+
+  li {
+    margin-bottom: 0.5em;
+    list-style: none;
+    counter-increment: olc;
+    display: table-row;
+
+    &:before {
+      content: counter(olc) ".";
+      display: table-cell;
+      text-align: right;
+      padding-right: 0.5em
+    }
+  }
+}
+
+
+
+// -----------------------------------------------------------------------
+
+
+
+// custom bullets lists
+// --------------------
+.c-list--icon {
+  margin: 1em 0;
+  padding-left: 0 !important;             // override fallback style
+
+  li {
+    position: relative;
+    padding-left: 1.5em;
+    list-style: none !important;        // override fallback style
+  }
+
+  svg {
+    @include absolute(top 0.4em left 0);
+    @include size(0.8em);
+
+    fill: var(--color-main);
+  }
+}

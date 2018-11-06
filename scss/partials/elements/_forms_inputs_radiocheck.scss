@@ -1,0 +1,116 @@
+
+
+
+// ================================================================
+
+// CUSTOM CHECKBOXES AND RADIO BUTTONS
+// -----------------------------------
+// NOTE: this partial uses the variables from '_form_inputs.scss'
+// and therefore must be included after '_form_inputs.scss'!
+
+// ================================================================
+
+
+
+// checkbox labels
+// ---------------
+input[type='checkbox'] + label {
+  position: relative;
+  display: block;
+  padding-left: 1.8em;
+  cursor: pointer;
+
+  color: var(--color-copy);
+
+  // label may contain links
+  // -----------------------
+  a {
+    @include typo-copy-bold;
+
+    color: inherit;
+
+    &:hover {
+      color: var(--color-main);
+      text-decoration: underline;
+    }
+  }
+}
+
+
+
+// radio button labels
+// -------------------
+input[type='radio'] + label {
+  @include typo-copy;
+
+  position: relative;
+  display: block;
+  margin-right: 1em;
+  padding-left: 1.5em;
+  cursor: pointer;
+}
+
+
+
+// hide default input ui elements
+// ------------------------------
+input[type='checkbox'],
+input[type='radio'] {
+  position: relative;
+  display: block;
+  border: none;
+  padding: 0;
+  height: 1px;
+  opacity: 0;
+
+  // shift user notification to correct position
+  // -------------------------------------------
+  margin-right: -1em;
+  width: 1em;
+  top: 10px;
+}
+
+
+
+// show custom ui elements
+// -----------------------
+input[type='checkbox'] + label::before,
+input[type='radio'] + label::before {
+  @include absolute(top 0.2em left 0);
+  @include size(1.2em);
+
+  display: inline-block;
+  content: ' ';
+  border: var(--input-border-width) solid var(--input-color-border);
+  background-color: var(--input-color-bg);
+  box-shadow: inset 0 0 0 2px white;
+}
+
+
+
+// some little extras for radio buttons
+// ------------------------------------
+input[type='radio'] + label::before {
+  top: 0;
+  border-radius: 50%;
+}
+
+
+
+// hover states only on desktop
+// ----------------------------
+@include vp-large-up {
+  input[type='checkbox']:hover + label::before,
+  input[type='radio']:hover + label::before {
+    background-color: var(--radiocheck-color-bg-hover);
+  }
+}
+
+
+
+// checked state
+// -------------
+input[type='checkbox']:checked + label::before,
+input[type='radio']:checked + label::before {
+  background: var(--radiocheck-color-bg-checked);
+}

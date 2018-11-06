@@ -1,0 +1,306 @@
+
+
+
+// ================================================================
+
+// DESKTOP NAVIGATION STYLES
+
+// ================================================================
+
+
+
+// deskto navigation settings
+// --------------------------
+
+// show/hide next level icons
+// --------------------------
+$icon-nextlevel-size:                       8px;
+
+
+
+// main level layout
+// -----------------
+$mainlevel-item-space-desktop:              30px;
+$mainlevel-item-padding-desktop:            10px 20px;
+
+
+
+// second level layout
+// -------------------
+$sublevel-item-space-desktop:               2px;
+$sublevel-item-padding-desktop:             10px;
+$sublevel-item-indent-desktop:              0;
+
+
+
+// third level layout (if necessary)
+// ---------------------------------
+
+
+
+// ----------------------------------------------------------------
+
+
+
+@include vp-nav-desktop {
+
+  // main navigation container
+  // -------------------------
+  .container-navigation {
+    position: relative;
+    z-index: z('navigation-main');
+    display: flex !important;  // show even if hidden in mobile view
+  }
+
+
+
+  // icon 'close navigation'
+  // -----------------------
+  [data-action="closeMenu"] {
+    display: none;
+  }
+
+
+
+  // navigation items container
+  // --------------------------
+  .container-navigation-items {
+    display: flex;
+    align-items: stretch;
+  }
+
+
+
+  // main level items desktop state
+  // ------------------------------
+  .navigation-item-mainlevel {
+
+    cursor: pointer;
+
+    display: flex;
+    flex: 0 1 auto;
+
+    position: relative;
+    margin-right: $mainlevel-item-space-desktop;
+
+    font-family: 'copy-bold', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+
+    background-color: transparent;
+    transition: all var(--anim-dur) var(--anim-ease);
+
+
+
+    // hover state
+    // -----------
+    &:hover {
+      background-color: var(--color-main);
+
+      & > a {
+        color: white;
+      }
+
+      // show sub level on hover
+      // -----------------------
+      & > .navigation-sublevel {
+        display: flex !important;   // show even if hidden in mobile view
+
+        // styles for animation
+        // --------------------
+        opacity: 1;
+        height: auto;
+        overflow: visible;
+        transition: opacity var(--anim-dur) var(--anim-ease);
+
+        // optional: space beteween main level/sublevels
+        // ---------------------------------------------
+        padding-top: 5px;
+      }
+    }
+
+    // open last entry to the left
+    // ---------------------------
+    &:last-child:hover {
+
+      .navigation-sublevel {
+        left: auto;
+        right: 0;
+
+        .navigation-sublevel {
+          right: 100%;
+          padding-right: $sublevel-item-space-desktop;
+        }
+      }
+    }
+
+    // active state
+    // ------------
+    &.is-active {
+      background-color: var(--color-main);
+
+      & > a {
+        color: white !important;
+      }
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+
+      padding: $mainlevel-item-padding-desktop;
+      text-decoration: none;
+
+      color: var(--color-main);
+    }
+
+
+
+    // next level icon
+    // ---------------
+    .navigation-item-icon {
+      margin-left: 0.3em;
+      fill: var(--color-contrast);
+    }
+
+    // don't show 'next level' icons in main level
+    // -------------------------------------------
+    & > .navigation-item-icon-touchzone {
+      display: none;
+    }
+  }
+
+
+
+  // navigation level icons
+  // ----------------------
+  .navigation-item-icon-touchzone {
+    display: flex;
+    flex: 0 0 auto;
+
+    margin: auto 0;
+  }
+
+  .navigation-item-icon {
+    @include size($icon-nextlevel-size);
+
+    margin: auto;
+    fill: var(--color-contrast);
+  }
+
+
+
+  // sub level container
+  // -------------------
+  .navigation-sublevel {
+    @include absolute(top 100% left 0);
+
+    z-index: z('navigation-main');
+
+    display: flex;
+    flex-direction: column;
+    min-width: 130px;
+
+    font-family: 'copy', sans-serif;;
+    font-size: 14px;
+    text-transform: uppercase;
+
+    // styles for animation
+    // --------------------
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: none;
+  }
+
+
+
+  // sub level items
+  // ---------------
+  .navigation-item-sublevel {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    margin-bottom: $sublevel-item-space-desktop;
+    background-color: rgba($color-fee-blue, 0.8);
+
+    // hover state
+    // -----------
+    &:hover {
+      background-color: var(--color-main);
+      transition: background-color var(--anim-dur) var(--anim-ease);
+
+      & > a {
+        color: white;
+      }
+
+      & .navigation-item-icon {
+        fill: white;
+      }
+
+      // show sublevel on hover
+      // ----------------------
+      & > .navigation-sublevel {
+        opacity: 1;
+
+        padding-top: 0;
+        height: auto;
+
+        overflow: visible;
+        transition: opacity var(--anim-dur) var(--anim-ease);
+      }
+    }
+
+    // active state
+    // ------------
+    &.is-active {
+      background-color: var(--color-main) !important;
+
+      & > a {
+        color: white;
+      }
+
+      .navigation-item-icon {
+        fill: white;
+      }
+    }
+
+    a {
+      position: relative;
+
+      padding: $sublevel-item-padding-desktop;
+      padding-left: ($sublevel-item-padding-desktop + $sublevel-item-indent-desktop);
+
+      text-decoration: none;
+      white-space: nowrap;
+
+      color: var(--color-contrast);
+      transition: all var(--anim-dur) var(--anim-ease);
+    }
+
+    span {
+      margin-left: auto;
+      padding-right: 10px;
+    }
+
+
+
+    // third level navigation items
+    // ----------------------------
+    .navigation-sublevel {
+      @include absolute(top 0 left 100%);
+
+      padding-left: $sublevel-item-space-desktop;
+
+      .navigation-item-sublevel {
+        background-color: rgba($color-fee-blue, 0.8);
+
+        &:hover {
+          background-color: var(--color-main);
+        }
+      }
+    }
+  }
+}

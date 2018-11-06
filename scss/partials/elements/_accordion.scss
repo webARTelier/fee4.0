@@ -1,0 +1,67 @@
+
+
+
+// ================================================================
+
+// ACCORDION ELEMENT STYLES
+
+// ================================================================
+
+
+
+.c-accordion-item__head {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 1px;
+  border-radius: var(--border-radius);
+  padding: 0.5em 1em;
+  cursor: pointer;
+
+  background-color: var(--color-main);
+
+  transition: all var(--anim-dur) var(--anim-ease);
+
+  &:hover {
+    background-color: var(--color-contrast);
+  }
+
+  &.is-open {
+    background-color: var(--color-contrast);
+
+    .c-accordion-item__headline {
+      color: var(--color-main);
+    }
+
+    .c-accordion-item__icon {
+      transform: rotate(180deg);
+      fill: var(--color-main);
+    }
+  }
+}
+
+.c-accordion-item__headline {
+  @include typo-headline-2;
+
+  color: white;
+  transition: all var(--anim-dur) var(--anim-ease);
+}
+
+.c-accordion-item__icon {
+  @include size(0.8em);
+
+  fill: white;
+  transition: all var(--anim-dur) var(--anim-ease);
+}
+
+.c-accordion-item__content {
+  display: none;
+
+  border-radius: var(--border-radius);
+  padding: 5px 10px 10px;
+
+  background-color: rgba(0, 0, 0, 0.1);
+}

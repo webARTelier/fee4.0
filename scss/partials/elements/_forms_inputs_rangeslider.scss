@@ -1,0 +1,176 @@
+
+
+
+// ================================================================
+
+// CUSTOM RANGE SLIDER
+// -------------------
+// NOTE: rangeslider inputs can consist of two elements:
+// rangeslider itself and extra input to display/enter slider value
+
+// ================================================================
+
+
+
+:root {
+  --rangeslider-track-width:                  100%;
+  --rangeslider-track-height:                 0.5em;
+  --rangeslider-track-border-radius:          calc(var(--rangeslider-track-height) / 2);
+  --rangeslider-track-color:                  rgba(0, 0, 0, 0.25);
+
+  --rangeslider-thumb-border-radius:          50%;
+  --rangeslider-thumb-border-color:           white;
+  --rangeslider-thumb-size:                   1em;
+  --rangeslider-thumb-color:                  var(--color-main);
+}
+
+
+
+// ----------------------------------------------------------------
+
+
+
+.container-input-slider {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.container-value-label {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
+
+// ----------------------------------------------------------------
+
+
+
+// range slider
+// ------------
+.input-slider {
+  // remove default webkit styles
+  // ----------------------------
+  -webkit-appearance: none;
+
+  // fix for FF unable to apply focus style bug
+  // ------------------------------------------
+  border: 1px solid transparent;
+
+  // required for proper track sizing in FF
+  // --------------------------------------
+  width: var(--rangeslider-track-width);
+
+  background-color: inherit;
+
+
+  &::-webkit-slider-runnable-track {
+    @include size(var(--rangeslider-track-width), var(--rangeslider-track-height));
+
+    border-radius: var(--rangeslider-track-border-radius);
+    background: var(--rangeslider-track-color);
+  }
+
+  &::-webkit-slider-thumb {
+    @include size(var(--rangeslider-thumb-size));
+
+    -webkit-appearance: none;
+
+    margin-top: calc((var(--rangeslider-thumb-size) / 3) * -1);
+    border: 2px solid var(--rangeslider-thumb-border-color);
+    border-radius: var(--rangeslider-thumb-border-radius);
+    background: var(--rangeslider-thumb-color);
+  }
+
+  &:focus {
+    outline: none;
+    border: none;
+  }
+
+  &:focus::-webkit-slider-runnable-track {
+    background: var(--rangeslider-track-color);
+  }
+
+  &::-moz-range-track {
+    @include size(var(--rangeslider-track-width), var(--rangeslider-track-height));
+
+    background: var(--rangeslider-track-color);
+    border-radius: var(--rangeslider-track-border-radius);
+  }
+
+  &::-moz-range-thumb {
+    @include size(var(--rangeslider-thumb-size));
+
+    border: 2px solid var(--rangeslider-thumb-border-color);
+    border-radius: var(--rangeslider-thumb-border-radius);
+    background: var(--rangeslider-thumb-color);
+  }
+
+  // hide the outline behind the border
+  // ----------------------------------
+  &:-moz-focusring{
+    outline: 1px solid white;
+    outline-offset: -1px;
+  }
+
+  &::-ms-track {
+    @include size(var(--rangeslider-track-width), var(--rangeslider-track-height));
+
+    // remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead
+    // ----------------------------------------------------------------------------------
+    background: transparent;
+
+    // leave room for the larger thumb to overflow with a transparent border
+    // ---------------------------------------------------------------------
+    border-color: transparent;
+    border-width: calc((var(--rangeslider-thumb-size) - var(--rangeslider-track-height)) / 2) 0;
+
+    // remove default tick marks
+    // -------------------------
+    color: transparent;
+  }
+
+  &::-ms-fill-lower,
+  &::-ms-fill-upper {
+    background: var(--rangeslider-track-color);
+    border-radius: var(--rangeslider-track-border-radius);
+  }
+
+  &::-ms-thumb {
+    @include size(var(--rangeslider-thumb-size));
+
+    margin-top: 0;
+    border: 2px solid var(--rangeslider-thumb-border-color);
+    border-radius: var(--rangeslider-thumb-border-radius);
+    background: var(--rangeslider-thumb-color);
+  }
+
+  &:focus::-ms-fill-lower,
+  &:focus::-ms-fill-upper {
+    background: var(--rangeslider-track-color);
+  }
+}
+
+
+// ----------------------------------------------------------------
+
+
+
+// extra input for slider value
+// ----------------------------
+.input-slider-value {
+  align-self: flex-end;
+
+  margin-bottom: 0.5em;
+  border: var(--input-border-width) solid var(--input-color-border);
+  padding: var(--input-padding-y) var(--input-padding-x);
+  width: 6em;
+
+  font-family: 'copy-bold', sans-serif;
+  text-align: right;
+  color: var(--color-main);
+}
