@@ -9,14 +9,13 @@
 
 
 
-:root {
+.c-button {
+
   --button-color:                           var(--color-contrast);
   --button-color-bg:                        var(--color-main);
-}
 
 
 
-.c-button {
   @include typo-copy;
 
   display: inline-block;

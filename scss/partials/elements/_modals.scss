@@ -11,20 +11,18 @@
 
 // modals
 // ------
-:root {
-  --modal-minwidth:                         280px;
-  --modal-maxwidth:                         530px;
-  --modal-padding:                          20px;
-  --modal-padding-top:                      calc(var(--size-touchable) + var(--modal-padding));
-}
-
-
-
-// ----------------------------------------------------------------
 
 
 
 .c-modal {
+
+  --modal-minwidth:                         280px;
+  --modal-maxwidth:                         530px;
+  --modal-padding:                          20px;
+  --modal-padding-top:                      calc(var(--size-touchable) + var(--modal-padding));
+
+
+
   @include fixed(top 50% left 50%);
 
   z-index: var(--z-modals);
