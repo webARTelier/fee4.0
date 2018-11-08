@@ -247,9 +247,9 @@ h3 {
 }
 
 .u-copy-medium {
-  @include typo-medium;
+  @include typo-copy-medium;
 }
 
 .u-copy-bold {
-  @include typo-bold;
+  @include typo-copy-bold;
 }
