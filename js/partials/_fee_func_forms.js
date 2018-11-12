@@ -7,7 +7,7 @@
 // check for html5 validation
 // --------------------------
 feeJS.hasHtml5Validation = function() {
-    return typeof document.createElement('input').checkValidity === 'function';
+  return typeof document.createElement('input').checkValidity === 'function';
 }
 
 
@@ -19,7 +19,7 @@ feeJS.hasHtml5Validation = function() {
 // mark form as submitted
 // ----------------------
 feeJS.markSubmitted = function(target) {
-    $(target).closest('form').addClass('is-submitted');
+  $(target).closest('form').addClass('is-submitted');
 }
 
 
@@ -32,13 +32,13 @@ feeJS.markSubmitted = function(target) {
 // --------------------------------------------
 feeJS.preventSubmitInvalid = function(target) {
 
-    if(feeJS.hasHtml5Validation()) {
-        $(target).submit(function (e) {
-            if(!this.checkValidity()) {
-                e.preventDefault();
-            }
-        })
-    }
+  if(feeJS.hasHtml5Validation()) {
+    $(target).submit(function (e) {
+      if(!this.checkValidity()) {
+        e.preventDefault();
+      }
+    })
+  }
 }
 
 
@@ -51,27 +51,27 @@ feeJS.preventSubmitInvalid = function(target) {
 // ------------------------
 feeJS.trackInputs = function() {
 
-    var inputs = {};
+  var inputs = {};
 
-    $('input, select, textarea').each(function() {
-        inputName = $(this).attr('name');
+  $('input, select, textarea').each(function() {
+    inputName = $(this).attr('name');
 
-        // get correct value from radio buttons ...
-        // ----------------------------------------
-        if($(this).is(':radio')) {
-            inputValue = $('input[name=' + inputName + ']:checked').val();
-        }
+    // get correct value from radio buttons ...
+    // ----------------------------------------
+    if($(this).is(':radio')) {
+      inputValue = $('input[name=' + inputName + ']:checked').val();
+    }
 
-        // ... or else just get value
-        // --------------------------
-        else {
-            inputValue = $(this).val();
-        }
+    // ... or else just get value
+    // --------------------------
+    else {
+      inputValue = $(this).val();
+    }
 
-        inputs[inputName] = inputValue;
-    })
+    inputs[inputName] = inputValue;
+  })
 
-    return inputs;
+  return inputs;
 }
 
 
@@ -84,12 +84,12 @@ feeJS.trackInputs = function() {
 // --------------------------------------
 feeJS.trackInvalid = function(target) {
 
-    var invalidInputs = [];
+  var invalidInputs = [];
 
-    $(target).closest('form').find('input:invalid, select:invalid, textarea:invalid').each(function() {
-        invalidInputs.push($(this).attr('name'));
-    });
+  $(target).closest('form').find('input:invalid, select:invalid, textarea:invalid').each(function() {
+    invalidInputs.push($(this).attr('name'));
+  });
 
-    return invalidInputs;
+  return invalidInputs;
 }
 

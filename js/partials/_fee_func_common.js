@@ -7,8 +7,8 @@
 // smooth scrolling to top
 // -----------------------
 feeJS.smoothScrollToTop = function() {
-    $("html, body").animate({ scrollTop: 0 }, 600);
-    return false;
+  $("html, body").animate({ scrollTop: 0 }, 600);
+  return false;
 }
 
 
@@ -20,17 +20,17 @@ feeJS.smoothScrollToTop = function() {
 // smooth scrolling to anchor
 // --------------------------
 feeJS.smoothScrollToAnchor = function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-        if (target.length) {
-            $('html, body').animate({
-                scrollTop: target.offset().top
-            }, 1000);
-            return false;
-        }
+    var target = $(this.hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+    if (target.length) {
+      $('html, body').animate({
+        scrollTop: target.offset().top
+      }, 1000);
+      return false;
     }
+  }
 }
 
 
@@ -48,33 +48,33 @@ feeJS.smoothScrollToAnchor = function() {
 
 feeJS.showTarget = function(target) {
 
-    // get target element
-    // ------------------
-    var targetElement = $($(target).data('show'));
+  // get target element
+  // ------------------
+  var targetElement = $($(target).data('show'));
 
-    // add namespaced listener for closing element
-    // -------------------------------------------
-    $(document).on('mouseup.closeElement', function(e) {
+  // add namespaced listener for closing element
+  // -------------------------------------------
+  $(document).on('mouseup.closeElement', function(e) {
 
-        // if click target isn't the container
-        // nor a descendant of the container ...
-        // -------------------------------------
-        if(!targetElement.is(e.target) && targetElement.has(e.target).length === 0) {
+    // if click target isn't the container
+    // nor a descendant of the container ...
+    // -------------------------------------
+    if(!targetElement.is(e.target) && targetElement.has(e.target).length === 0) {
 
-            // ... hide target element
-            // -----------------------
-            targetElement.removeClass('is-visible');
-            $('.wrapper-content').removeClass('is-shifted');
+      // ... hide target element
+      // -----------------------
+      targetElement.removeClass('is-visible');
+      $('.wrapper-content').removeClass('is-shifted');
 
-            // ... and remove namespaced listener
-            // ----------------------------------
-            $(document).off('mouseup.closeElement');
-        }
-    });
+      // ... and remove namespaced listener
+      // ----------------------------------
+      $(document).off('mouseup.closeElement');
+    }
+  });
 
-    // show target element
-    // -------------------
-    targetElement.addClass('is-visible');
+  // show target element
+  // -------------------
+  targetElement.addClass('is-visible');
 }
 
 
@@ -86,7 +86,7 @@ feeJS.showTarget = function(target) {
 // hide target element
 // -------------------
 feeJS.hideTarget = function(target) {
-    $($(target).data('hide')).removeClass('is-visible');
+  $($(target).data('hide')).removeClass('is-visible');
 }
 
 
@@ -98,8 +98,8 @@ feeJS.hideTarget = function(target) {
 // open off canvas menu
 // --------------------
 feeJS.openMenu = function() {
-    $('.container-navigation-offcanvas').addClass('is-visible');
-    $('.overlay-page[data-action="closeMenu"]').addClass('is-visible');
+  $('.container-navigation-offcanvas').addClass('is-visible');
+  $('.overlay-page[data-action="closeMenu"]').addClass('is-visible');
 }
 
 
@@ -110,8 +110,8 @@ feeJS.openMenu = function() {
 // close off canvas menu
 // ---------------------
 feeJS.closeMenu = function() {
-    $('.container-navigation-offcanvas').removeClass('is-visible');
-    $('.overlay-page[data-action="closeMenu"]').removeClass('is-visible');
+  $('.container-navigation-offcanvas').removeClass('is-visible');
+  $('.overlay-page[data-action="closeMenu"]').removeClass('is-visible');
 }
 
 
@@ -124,25 +124,25 @@ feeJS.closeMenu = function() {
 // -------------------------
 function showSublevel(target) {
 
-    // get current entry
-    // -----------------
-    var upperGradeLevel = $(target).parent();
-    var subLevel = $(target).next('.navigation-sublevel');
+  // get current entry
+  // -----------------
+  var upperGradeLevel = $(target).parent();
+  var subLevel = $(target).next('.navigation-sublevel');
 
-    // set properties for current item
-    // -------------------------------
-    $(target).attr('data-action', 'hideSublevel');
-    $(target).find('.navigation-item-icon').css('transform', 'rotate(-90deg)');
+  // set properties for current item
+  // -------------------------------
+  $(target).attr('data-action', 'hideSublevel');
+  $(target).find('.navigation-item-icon').css('transform', 'rotate(-90deg)');
 
-    // set level properties
-    // --------------------
-    subLevel.slideDown();
+  // set level properties
+  // --------------------
+  subLevel.slideDown();
 
-    // delay 'addClass' until animation is done
-    // ----------------------------------------
-    setTimeout(function() {
-        upperGradelevel.addClass('is-open');
-    }, 300);
+  // delay 'addClass' until animation is done
+  // ----------------------------------------
+  setTimeout(function() {
+    upperGradelevel.addClass('is-open');
+  }, 300);
 }
 
 
@@ -155,25 +155,25 @@ function showSublevel(target) {
 // -------------------------
 function hideSublevel(target) {
 
-    // get current entry
-    // -----------------
-    var upperGradeLevel = $(target).parent();
-    var subLevel = $(target).next('.navigation-sublevel');
+  // get current entry
+  // -----------------
+  var upperGradeLevel = $(target).parent();
+  var subLevel = $(target).next('.navigation-sublevel');
 
-    // set properties for current item
-    // -------------------------------
-    $(target).attr('data-action', 'showSublevel');
-    $(target).find('.navigation-item-icon').css('transform', 'rotate(0)');
+  // set properties for current item
+  // -------------------------------
+  $(target).attr('data-action', 'showSublevel');
+  $(target).find('.navigation-item-icon').css('transform', 'rotate(0)');
 
-    // set level properties
-    // --------------------
-    subLevel.slideUp();
+  // set level properties
+  // --------------------
+  subLevel.slideUp();
 
-    // delay 'removeClass' until animation is done
-    // -------------------------------------------
-    setTimeout(function() {
-        upperGradelevel.removeClass('is-open');
-    }, 300);
+  // delay 'removeClass' until animation is done
+  // -------------------------------------------
+  setTimeout(function() {
+    upperGradelevel.removeClass('is-open');
+  }, 300);
 }
 
 
@@ -186,8 +186,8 @@ function hideSublevel(target) {
 // open search
 // -----------
 feeJS.openSearch = function() {
-    $('.container-search').addClass('is-visible');
-    $('.overlay[data-action="closeSearch"]').addClass('is-visible');
+  $('.container-search').addClass('is-visible');
+  $('.overlay[data-action="closeSearch"]').addClass('is-visible');
 }
 
 
@@ -199,8 +199,8 @@ feeJS.openSearch = function() {
 // close search
 // ------------
 feeJS.closeSearch = function() {
-    $('.container-search').removeClass('is-visible');
-    $('.overlay[data-action="closeSearch"]').removeClass('is-visible');
+  $('.container-search').removeClass('is-visible');
+  $('.overlay[data-action="closeSearch"]').removeClass('is-visible');
 }
 
 
@@ -212,19 +212,19 @@ feeJS.closeSearch = function() {
 // show element below given scroll position
 // ----------------------------------------
 feeJS.showAtScroll = function(target, scrollPosition) {
-    var scrolled = $(window).scrollTop();
+  var scrolled = $(window).scrollTop();
 
-    // show below given scroll position ...
-    // ------------------------------------
-    if (scrolled >= scrollPosition) {
-        $(target).addClass('is-visible');
-    }
+  // show below given scroll position ...
+  // ------------------------------------
+  if (scrolled >= scrollPosition) {
+    $(target).addClass('is-visible');
+  }
 
-    // ... and hide above given scroll position
-    // ----------------------------------------
-    else {
-        $(target).removeClass('is-visible');
-    }
+  // ... and hide above given scroll position
+  // ----------------------------------------
+  else {
+    $(target).removeClass('is-visible');
+  }
 }
 
 
@@ -241,19 +241,19 @@ feeJS.showAtScroll = function(target, scrollPosition) {
 // ------------------------------------------------------------------------
 feeJS.addAspectRatio = function(target) {
 
-    // figure out and save aspect ratio ...
-    // ------------------------------------
-    $(target).attr('data-aspectratio', $(target).height() / $(target).width())
+  // figure out and save aspect ratio ...
+  // ------------------------------------
+  $(target).attr('data-aspectratio', $(target).height() / $(target).width())
 
-    // ... update element status ...
-    // -----------------------------
-        .removeAttr('data-action')
-        .attr('data-type', 'preparedResize')
+  // ... update element status ...
+  // -----------------------------
+    .removeAttr('data-action')
+    .attr('data-type', 'preparedResize')
 
-    // ... and remove the hard coded width/height
-    // ------------------------------------------
-        .removeAttr('height')
-        .removeAttr('width');
+  // ... and remove the hard coded width/height
+  // ------------------------------------------
+    .removeAttr('height')
+    .removeAttr('width');
 }
 
 
@@ -270,13 +270,13 @@ feeJS.addAspectRatio = function(target) {
 // ------------------------------------------------------------------------
 feeJS.resizeAspectRatio = function(target) {
 
-    // get width of parent responsive container
-    // ----------------------------------------
-    var newWidth = $(target).closest('[data-type="responsiveContainer"]').width();
+  // get width of parent responsive container
+  // ----------------------------------------
+  var newWidth = $(target).closest('[data-type="responsiveContainer"]').width();
 
-    // resize element according to its aspect ratio
-    // --------------------------------------------
-    $(target).width(newWidth).height(newWidth * $(target).data('aspectratio'));
+  // resize element according to its aspect ratio
+  // --------------------------------------------
+  $(target).width(newWidth).height(newWidth * $(target).data('aspectratio'));
 }
 
 
@@ -289,22 +289,22 @@ feeJS.resizeAspectRatio = function(target) {
 // ------------------------
 feeJS.toggleAccordion = function(target, openMultiple) {
 
-    openMultiple = openMultiple || false;
+  openMultiple = openMultiple || false;
 
-    // close other opened items?
-    // -------------------------
-    if(openMultiple == false) {
-        $('.js-toggleAccordion')
-            .not(target)
-            .removeClass('is-open')
-            .next('.c-accordion-item__content')
-            .hide('fast');
-    }
+  // close other opened items?
+  // -------------------------
+  if(openMultiple == false) {
+    $('.js-toggleAccordion')
+      .not(target)
+      .removeClass('is-open')
+      .next('.c-accordion-item__content')
+      .hide('fast');
+  }
 
-    $(target)
-        .toggleClass('is-open')
-        .next('.c-accordion-item__content')
-        .slideToggle('fast');
+  $(target)
+    .toggleClass('is-open')
+    .next('.c-accordion-item__content')
+    .slideToggle('fast');
 }
 
 
@@ -317,16 +317,16 @@ feeJS.toggleAccordion = function(target, openMultiple) {
 // ------------------
 feeJS.toggleTab = function(target) {
 
-    // there can only be one
-    // ---------------------
-    $('.tabs-navigation__item.is-active, .tabs-content__item.is-active').removeClass('is-active');
+  // there can only be one
+  // ---------------------
+  $('.tabs-navigation__item.is-active, .tabs-content__item.is-active').removeClass('is-active');
 
 
-    // open the chosen one
-    // -------------------
-    var tabTarget = $(target).attr('data-tabtarget');
-    $(target).addClass('is-active');
-    $(tabTarget).addClass('is-active');
+  // open the chosen one
+  // -------------------
+  var tabTarget = $(target).attr('data-tabtarget');
+  $(target).addClass('is-active');
+  $(tabTarget).addClass('is-active');
 }
 
 
@@ -339,18 +339,18 @@ feeJS.toggleTab = function(target) {
 // -----------
 feeJS.openModal = function(target) {
 
-    // prevent page in background from scrolling
-    // -----------------------------------------
-    $('body').css('overflow-y', 'hidden');
+  // prevent page in background from scrolling
+  // -----------------------------------------
+  $('body').css('overflow-y', 'hidden');
 
-    // close all other modals
-    // ----------------------
-    $('.c-modal').removeClass('is-visible');
+  // close all other modals
+  // ----------------------
+  $('.c-modal').removeClass('is-visible');
 
-    // open modal and page overlay
-    // ---------------------------
-    $('.c-modal' +  target).addClass('is-visible');
-    $('.c-pageoverlay.js-closeModal').addClass('is-visible');
+  // open modal and page overlay
+  // ---------------------------
+  $('.c-modal' +  target).addClass('is-visible');
+  $('.c-pageoverlay.js-closeModal').addClass('is-visible');
 }
 
 
@@ -363,14 +363,14 @@ feeJS.openModal = function(target) {
 // ------------
 feeJS.closeModal = function() {
 
-    // let page in background scroll again
-    // -----------------------------------
-    $('body').css('overflow-y', '');
+  // let page in background scroll again
+  // -----------------------------------
+  $('body').css('overflow-y', '');
 
-    // close modal and overlay
-    // -----------------------
-    $('.c-modal').removeClass('is-visible');
-    $('.c-pageoverlay').removeClass('is-visible');
+  // close modal and overlay
+  // -----------------------
+  $('.c-modal').removeClass('is-visible');
+  $('.c-pageoverlay').removeClass('is-visible');
 }
 
 
@@ -382,8 +382,8 @@ feeJS.closeModal = function() {
 // switch modals
 // -------------
 feeJS.switchModal = function(target) {
-    feeJS.closeModal();
-    feeJS.openModal(target);
+  feeJS.closeModal();
+  feeJS.openModal(target);
 }
 
 
