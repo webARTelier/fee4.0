@@ -265,14 +265,14 @@ feeJS.addAspectRatio = function(target) {
 // resize prepared element with defined aspect ratio
 // (YouTube/Vimeo iframes, ...) for responsive resizing
 // NOTE: elements to be resized must consist of
-// - element itself (default markup: data-action="prepareResponsive")
-// - responsive container (default markup: data-type="responsiveContainer")
-// ------------------------------------------------------------------------
+// - element itself (default markup: '.js-prepareResponsive')
+// - responsive container (default markup: '.js-responsiveContainer')
+// ------------------------------------------------------------------
 feeJS.resizeAspectRatio = function(target) {
 
   // get width of parent responsive container
   // ----------------------------------------
-  var newWidth = $(target).closest('[data-type="responsiveContainer"]').width();
+  var newWidth = $(target).closest('.js-responsiveContainer').width();
 
   // resize element according to its aspect ratio
   // --------------------------------------------

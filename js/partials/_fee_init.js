@@ -47,7 +47,7 @@ $(document).ready(function() {
 
   // open off canvas menu
   // --------------------
-  $('html').on('click', '[data-action="openMenu"]', function() {
+  $('html').on('click', '.js-openMenu', function() {
     feeJS.openMenu();
   });
 
@@ -55,7 +55,7 @@ $(document).ready(function() {
 
   // close off canvas menu
   // ---------------------
-  $('html').on('click', '[data-action="closeMenu"]', function() {
+  $('html').on('click', '.js-closeMenu', function() {
     feeJS.closeMenu();
   });
 
@@ -63,11 +63,11 @@ $(document).ready(function() {
 
   // show/hide menu sublevels
   // -------------------------
-  $('html').on('click', '[data-action="showSublevel"]', function() {
+  $('html').on('click', '.js-showSubLevel', function() {
     showSublevel(this);
   });
 
-  $('html').on('click', '[data-action="hideSublevel"]', function() {
+  $('html').on('click', 'js-hideSubLevel', function() {
     hideSublevel(this);
   });
 
@@ -75,7 +75,7 @@ $(document).ready(function() {
 
   // open search
   // -----------
-  $('html').on('click', '[data-action="openSearch"]', function() {
+  $('html').on('click', 'js-openSearch', function() {
     feeJS.openSearch();
   });
 
@@ -83,7 +83,7 @@ $(document).ready(function() {
 
   // close search
   // ------------
-  $('html').on('click', '[data-action="closeSearch"]', function() {
+  $('html').on('click', '.js-closeSearch', function() {
     feeJS.closeSearch();
   });
 
@@ -92,7 +92,7 @@ $(document).ready(function() {
 
   // hero slider
   // -----------
-  $('[data-action="initHeroSlider"]').owlCarousel({
+  $('.js-initHeroSlider').owlCarousel({
     autoplay:           true,
     loop:               true,
     nav:                true,
@@ -105,7 +105,7 @@ $(document).ready(function() {
 
   // content image slider
   // --------------------
-  $('[data-action="initContentSlider"]').owlCarousel({
+  $('.js-initContentSlider').owlCarousel({
     autoplay:           true,
     loop:               true,
     nav:                true,
@@ -115,38 +115,9 @@ $(document).ready(function() {
 
 
 
-  // news slider
-  // -----------
-  $('[data-action="initNewsSlider"]').owlCarousel({
-    autoplay:           true,
-    loop:               true,
-    nav:                true,
-    autoplayTimeout:    5000,
-    margin:             20,
-    navText:            ['<svg><use xlink:href="../Images/icons.svg#icon-caret-left"></use></svg>',
-                         '<svg><use xlink:href="../Images/icons.svg#icon-caret-right"></use></svg>'],
-
-    responsive:{
-      0:{
-        items:      1
-      },
-      479:{
-        items:      2
-      },
-      767:{
-        items:      3
-      },
-      989:{
-        items:      4
-      }
-    }
-  });
-
-
-
   // smooth scrolling to top
   // -----------------------
-  $('html').on('click', '[data-action="scrollToTop"]', function() {
+  $('html').on('click', '.js-scrollToTop', function() {
     feeJS.smoothScrollToTop();
   });
 
@@ -162,7 +133,7 @@ $(document).ready(function() {
 
   // image lightbox/gallery
   // ----------------------
-  $('[data-action="initLightbox"]').SmartPhoto();
+  $('.js-initLightbox').SmartPhoto();
 
 
 
@@ -187,7 +158,7 @@ $(document).ready(function() {
   // prepare resizing for elements with width/height attribute
   // like vimeo/youtube videos or google map iframes
   // ---------------------------------------------------------
-  $('[data-action="prepareResponsive"]').each(function() {
+  $('.js-prepareResponsive').each(function() {
     feeJS.addAspectRatio(this);
   });
 
@@ -199,7 +170,7 @@ $(document).ready(function() {
     feeJS.preventSubmitInvalid(this);
   });
 
-  $('[data-action="submit"]').click(function() {
+  $('.js-submit').click(function() {
     feeJS.markSubmitted(this);
   });
 
