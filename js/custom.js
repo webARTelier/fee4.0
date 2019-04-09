@@ -39,7 +39,6 @@ var feeJS = feeJS || {};
 // reasons exclude all scripts you do not need for
 // current project!
 
-//@prepros-append partials/_fee_func_basic.js
 //@prepros-append partials/_fee_func_common.js
 //@prepros-append partials/_fee_func_forms.js
 

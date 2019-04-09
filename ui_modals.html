@@ -13,6 +13,8 @@
   </head>
   <body>
 
+
+
     <!-- header section wrapper -->
     <div class="o-wrapper-header">
 
@@ -31,19 +33,18 @@
     <div class="o-wrapper-content">
 
       <div class="o-row">
-
         <div class="o-content o-content--centered u-space-topbottom">
 
-          <div class="c-intro">
-            <h1>Modals</h1>
-          </div>
+          <h1>Modals</h1>
 
-          <button class="c-button js-openModal" data-target=".test">Modal öffnen</button>
+          <!-- content wrapper -->
+          <div class="wrapper u-space-top">
+            <button class="c-button js-openModal" data-target=".test">Modal öffnen</button>
+          </div>
+          <!-- end content wrapper -->
 
         </div>
-
       </div>
-
 
     </div>
     <!-- end content section wrapper -->
@@ -55,33 +56,35 @@
 
 
     <!-- modal 'test' -->
-    <div class="c-modal test">
+    <div class="c-modal test u-shadow--modal">
       <div class="c-modal__close js-closeModal">
         <svg class="c-modal__icon"><use xlink:href="images/icons.svg#icon-close"></use></svg>
       </div>
       <h2>Test-Modal</h2>
       <p>Hier steht der Modal-Text</p>
       <p>&nbsp;</p>
-      <a class="js-switchModal" href="javascript:;" data-target=".switch">» anderes Modal öffnen</a>
+      <a class="c-link js-switchModal" href="javascript:;" data-target=".switch">» anderes Modal öffnen</a>
     </div>
     <!-- end modal 'test' -->
 
+
+
     <!-- modal 'switch' -->
-    <div class="c-modal switch">
+    <div class="c-modal switch u-shadow--modal">
       <div class="c-modal__close js-closeModal">
         <svg class="c-modal__icon"><use xlink:href="images/icons.svg#icon-close"></use></svg>
       </div>
       <h2>Anderes Modal</h2>
       <p>Hier steht der Modal-Text</p>
       <p>&nbsp;</p>
-      <a class="js-switchModal" href="javascript:;" data-target=".test">« zurück zum ersten Modal</a>
+      <a class="c-link js-switchModal" href="javascript:;" data-target=".test">« zurück zum ersten Modal</a>
     </div>
     <!-- end modal 'switch' -->
 
 
 
     <!-- overlay for closing modals -->
-    <div class="c-pageoverlay js-closeModal" onclick=""></div>
+    <div class="c-pageoverlay dark js-closeModal" onclick=""></div>
     <!-- end overlay for closing modals -->
 
 
@@ -97,6 +100,8 @@
 
     </div>
     <!-- end footer section wrapper -->
+
+
 
     <!-- importing required javascripts -->
     <script src="js/custom_min.js"></script>

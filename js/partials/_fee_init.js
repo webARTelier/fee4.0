@@ -4,24 +4,10 @@
 // INIT REQUIRED FUNCTIONS
 // =======================
 
-// PART I: things to be done immediately
-// =====================================
 
 
-
-// set global scope for basic page variables
-// -----------------------------------------
-var currentViewport = feeJS.getCurrentViewport(),
-    currentNavState = feeJS.getCurrentNavstate();
-
-
-
-// =======================================================================
-
-
-
-// PART II: things to be done on document.ready
-// ============================================
+// PART I: things to be done on document.ready
+// ===========================================
 $(document).ready(function() {
 
 
@@ -35,83 +21,6 @@ $(document).ready(function() {
   // IE polyfill 'object-fit'
   // ------------------------
   objectFitImages();
-
-
-
-  // get css breakpoint values
-  // -------------------------
-  var breakpoints = feeJS.getBreakpoints();
-  console.log(breakpoints);
-
-
-
-  // open off canvas menu
-  // --------------------
-  $('html').on('click', '.js-openMenu', function() {
-    feeJS.openMenu();
-  });
-
-
-
-  // close off canvas menu
-  // ---------------------
-  $('html').on('click', '.js-closeMenu', function() {
-    feeJS.closeMenu();
-  });
-
-
-
-  // show/hide menu sublevels
-  // -------------------------
-  $('html').on('click', '.js-showSubLevel', function() {
-    showSublevel(this);
-  });
-
-  $('html').on('click', 'js-hideSubLevel', function() {
-    hideSublevel(this);
-  });
-
-
-
-  // open search
-  // -----------
-  $('html').on('click', 'js-openSearch', function() {
-    feeJS.openSearch();
-  });
-
-
-
-  // close search
-  // ------------
-  $('html').on('click', '.js-closeSearch', function() {
-    feeJS.closeSearch();
-  });
-
-
-
-
-  // hero slider
-  // -----------
-  $('.js-initHeroSlider').owlCarousel({
-    autoplay:           true,
-    loop:               true,
-    nav:                true,
-    animateOut:         'fadeOut',
-    autoplayTimeout:    8000,
-    items:              1,
-  });
-
-
-
-  // content image slider
-  // --------------------
-  $('.js-initContentSlider').owlCarousel({
-    autoplay:           true,
-    loop:               true,
-    nav:                true,
-    autoplayTimeout:    5000,
-    items:              1,
-  });
 
 
 
@@ -204,16 +113,9 @@ $(document).ready(function() {
 
 
 
-  // PART III: things to be done on resize
-  // =====================================
+  // PART II: things to be done on resize
+  // ====================================
   $(window).resize(feeJS.debounce(function() {
-
-
-
-    // refresh variable basic page values
-    // ----------------------------------
-    currentViewport = feeJS.getCurrentViewport();
-    currentNavState = feeJS.getCurrentNavstate();
 
 
 
@@ -225,6 +127,7 @@ $(document).ready(function() {
     });
 
 
+
   }, 100));
 
 
@@ -233,9 +136,10 @@ $(document).ready(function() {
 
 
 
-  // PART IV: things to be done on scroll
-  // ====================================
+  // PART III: things to be done on scroll
+  // =====================================
   $(window).scroll(feeJS.debounce(function() {
+
 
 
     // show to top element when scrolling down
@@ -243,6 +147,7 @@ $(document).ready(function() {
     feeJS.showAtScroll('.totop', '150');
 
 
+
   }, 100));
 
 
@@ -251,12 +156,13 @@ $(document).ready(function() {
 
 
 
-  // PART V: trigger 'resize' and 'scroll' on document ready
+  // PART IV: trigger 'resize' and 'scroll' on document ready
   // so functions that need to be executed on document ready
   // AND on resize/scroll only need to be called on resize/scroll
   // ------------------------------------------------------------
   $(window).trigger('resize');
   $(window).trigger('scroll');
+
 
 
 });

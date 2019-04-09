@@ -61,6 +61,7 @@ $bp: (
   --navstate:                               mobile;
 
 
+
   // set minimum layout left/right space
   // -----------------------------------
   --layout-space-x:                         10px;
@@ -83,7 +84,7 @@ $bp: (
   // set default vertical space between content elements
   // NOTE: do not muddle up with grid gutters!
   // ---------------------------------------------------
-  --content-space-y:                        30px;
+  --content-space-y:                        20px;
 
 
 
@@ -169,7 +170,7 @@ $bp: (
   :root {
     --vp-name:                              small;
     --content-maxwidth:                     420px;
-    --content-space-y:                      40px;
+    --content-space-y:                      20px;
     --grid-gutter-row:                      15px;
     --grid-gutter-form-row:                 10px;
     --grid-gutter-gallery-row:              10px;
@@ -188,7 +189,7 @@ $bp: (
 
   :root {
     --vp-name:                              medium;
-    --layout-space-x:                       50px;
+    --layout-space-x:                       30px;
     --content-maxwidth:                     1140px;
     --content-space-y:                      50px;
     --grid-gutter-row:                      20px;
@@ -212,7 +213,7 @@ $bp: (
     --vp-name:                              large;
     --layout-space-x:                       70px;
     --content-maxwidth:                     1140px;
-    --content-space-y:                      60px;
+    --content-space-y:                      30px;
     --grid-gutter-row:                      25px;
     --grid-gutter-form-row:                 15px;
     --grid-gutter-gallery-row:              15px;
@@ -234,7 +235,7 @@ $bp: (
     --vp-name:                              huge;
     --layout-space-x:                       100px;
     --content-maxwidth:                     1140px;
-    --content-space-y:                      70px;
+    --content-space-y:                      40px;
     --grid-gutter-row:                      30px;
     --grid-gutter-form-row:                 15px;
     --grid-gutter-gallery-row:              15px;

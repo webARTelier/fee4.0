@@ -20,6 +20,8 @@
 
   position: relative;
 
+
+
   // colored overlay for element with spinner
   // ----------------------------------------
   &:before {
@@ -29,6 +31,8 @@
     content: '';
     background-color: rgba(black, 0.5);
   }
+
+
 
   // spinner element
   // ---------------
@@ -48,9 +52,11 @@
     content: '';
 
     transform: translate(-50%, -50%);
-    animation: spin 0.5s linear infinite;
+    animation: spin 0.4s linear infinite;
   }
 }
+
+
 
 @keyframes spin {
   0% { transform: rotate(0deg); }

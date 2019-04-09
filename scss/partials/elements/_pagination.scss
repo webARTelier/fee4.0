@@ -14,6 +14,8 @@
   justify-content: space-between;
 }
 
+
+
 .c-pagination__item {
   @include size(var(--size-touchable));
 
@@ -23,6 +25,8 @@
     margin-right: 0;
   }
 }
+
+
 
 .pagination__link {
   @include size(100%);
@@ -34,6 +38,8 @@
   border: 1px solid var(--color-main);
   color: var(--color-main);
   text-decoration: none;
+
+  transition: all var(--anim-dur) var(--anim-ease);
 
   &.is-active,
   &:hover {

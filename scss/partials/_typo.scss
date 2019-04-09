@@ -242,14 +242,14 @@ h3 {
   @include typo-copy;
 }
 
-.u-copy-light {
+.u-copy--light {
   @include typo-copy-light;
 }
 
-.u-copy-medium {
+.u-copy--medium {
   @include typo-copy-medium;
 }
 
-.u-copy-bold {
+.u-copy--bold {
   @include typo-copy-bold;
 }

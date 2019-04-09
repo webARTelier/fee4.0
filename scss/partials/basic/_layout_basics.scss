@@ -26,13 +26,19 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 
+
+
 .o-wrapper-header {
   grid-area: page-header;
 }
 
+
+
 .o-wrapper-content {
   grid-area: page-content;
 }
+
+
 
 .o-wrapper-footer {
   grid-area: page-footer;
@@ -74,11 +80,15 @@ body {
   display: block;
 }
 
+
+
 .o-content--centered {
   grid-area: row-content;
   justify-items: stretch;
   align-items: stretch;
 }
+
+
 
 .o-content--fullwidth {
   grid-column: 1 /span 3;
@@ -101,9 +111,13 @@ body {
   padding-top: var(--content-space-y) !important;
 }
 
+
+
 .u-space-bottom {
   padding-bottom: var(--content-space-y) !important;
 }
+
+
 
 .u-space-topbottom {
   padding-top: var(--content-space-y) !important;

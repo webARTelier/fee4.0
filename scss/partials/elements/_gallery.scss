@@ -16,16 +16,22 @@
   grid-gap: var(--grid-gutter-gallery-column) var(--grid-gutter-gallery-row);
 }
 
+
+
 .c-gallery__item {
   @include aspect-ratio(16, 9);
 
   display: block;
 }
 
+
+
 .c-gallery__imagecontainer {
   @include absolute(top 0 left 0);
   @include size(100%);
 }
+
+
 
 .c-gallery__image {
   @include fit(cover, $pos-y: top);

@@ -29,7 +29,7 @@ $invalid-color-background:                  tint($color-red, 92);
   input:invalid,
   textarea:invalid,
   select:invalid {
-    border: 1px solid var(--color-highlight);
+    border: 1px solid var(--color-error);
     background-color: $invalid-color-background !important;  // selects need '!important'
   }
 
@@ -44,10 +44,10 @@ $invalid-color-background:                  tint($color-red, 92);
 
   input[type='checkbox']:invalid + label,
   input[type='radio']:invalid + label {
-    color: var(--color-highlight);
+    color: var(--color-error);
 
     &:before {
-      border: 1px solid var(--color-highlight);
+      border: 1px solid var(--color-error);
       background-color: $invalid-color-background;
     }
 
@@ -59,7 +59,7 @@ $invalid-color-background:                  tint($color-red, 92);
     }
 
     a {
-      color: var(--color-highlight);
+      color: var(--color-error);
     }
   }
 }

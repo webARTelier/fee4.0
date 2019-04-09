@@ -12,6 +12,8 @@
 .c-overlay-image {
   display: inline-block;
 
+
+
   // overlay background
   // ------------------
   &:before {
@@ -25,6 +27,8 @@
 
     transition: all var(--anim-dur) var(--anim-ease);
   }
+
+
 
   // overlay icon
   // ------------
@@ -52,6 +56,8 @@
     }
   }
 
+
+
   // choose your icon
   // ----------------
   &.zoom {
@@ -61,6 +67,8 @@
       transform: scaleX(-1);
     }
   }
+
+
 
   &.more {
 

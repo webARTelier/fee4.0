@@ -3,7 +3,7 @@
 
 // ================================================================
 
-// DEFAULT LINK STYLING
+// DEFAULT LINK STYLES
 
 // ================================================================
 
@@ -11,7 +11,7 @@
 
 // default
 // -------
-@mixin link-default {
+.c-link {
   color: var(--color-link);
 
   // hover state only in desktop view
@@ -29,7 +29,7 @@
 
 // neutral
 // -------
-@mixin link-neutral {
+.c-link--neutral {
   color: inherit;
   text-decoration: none;
 

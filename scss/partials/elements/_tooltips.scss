@@ -9,8 +9,8 @@
 
 
 :root {
-  --tooltip-distance:                         5px;
-  --tooltip-triangle-size:                    8px;
+  --tooltip-distance:                         0.3em;
+  --tooltip-triangle-size:                    0.5em;
   --tooltip-color:                            white;
   --tooltip-color-bg:                         var(--color-main);
 }
@@ -25,7 +25,7 @@
   // ----------------------------
   &:after {
     border-radius: var(--border-radius);
-    padding: 3px 8px 5px;
+    padding: 0.2em 0.5em 0.3em;
 
     font-size: 14px;
     line-height: 1.2;
@@ -71,7 +71,7 @@
   // ----------------
   &:before {
     @include absolute(top 50%);
-    @include triangle(left, 6px, var(--color-main));
+    @include triangle(left, var(--tooltip-triangle-size), var(--color-main));
 
     right: calc((var(--tooltip-distance) + var(--tooltip-triangle-size)) * -1);
     transform: translateY(-50%);
@@ -101,7 +101,7 @@
   // ----------------
   &:before {
     @include absolute(top 50%);
-    @include triangle(right, 6px, var(--color-main));
+    @include triangle(right, var(--tooltip-triangle-size), var(--color-main));
 
     left: calc((var(--tooltip-distance) + var(--tooltip-triangle-size)) * -1);
     transform: translateY(-50%);
@@ -131,7 +131,7 @@
   // ----------------
   &:before {
     @include absolute(left 10%);
-    @include triangle(down, 6px, var(--color-main));
+    @include triangle(down, var(--tooltip-triangle-size), var(--color-main));
 
     top: calc(((var(--tooltip-distance) + var(--tooltip-triangle-size)) * -1));
     transform: translateX(-50%);
@@ -161,7 +161,7 @@
   // ----------------
   &:before {
     @include absolute(left 10%);
-    @include triangle(up, 6px, var(--color-main));
+    @include triangle(up, var(--tooltip-triangle-size), var(--color-main));
 
     bottom: calc(((var(--tooltip-distance) + var(--tooltip-triangle-size)) * -1));
     transform: translateX(-50%);

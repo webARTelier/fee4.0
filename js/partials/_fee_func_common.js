@@ -4,6 +4,42 @@
 // COMMON FRAMEWORK FUNCTIONS
 // ==========================
 
+
+
+// debounce
+// --------
+feeJS.debounce = function(func, wait) {
+  var timeout, args, context, timestamp;
+
+  return function() {
+    context = this;
+    args = [].slice.call(arguments, 0);
+    timestamp = new Date();
+
+    var later = function() {
+      var last = (new Date()) - timestamp;
+
+      if(last < wait) {
+        timeout = setTimeout(later, wait - last);
+
+      } else {
+        timeout = null;
+        func.apply(context, args);
+      }
+    };
+
+    if(!timeout) {
+      timeout = setTimeout(later, wait);
+    }
+  }
+};
+
+
+
+// -----------------------------------------------------------------------
+
+
+
 // smooth scrolling to top
 // -----------------------
 feeJS.smoothScrollToTop = function() {
@@ -45,7 +81,6 @@ feeJS.smoothScrollToAnchor = function() {
 // NOTE: target element will be closed
 // on any click outside target element
 // -----------------------------------
-
 feeJS.showTarget = function(target) {
 
   // get target element
@@ -87,120 +122,6 @@ feeJS.showTarget = function(target) {
 // -------------------
 feeJS.hideTarget = function(target) {
   $($(target).data('hide')).removeClass('is-visible');
-}
-
-
-
-// -----------------------------------------------------------------------
-
-
-
-// open off canvas menu
-// --------------------
-feeJS.openMenu = function() {
-  $('.container-navigation-offcanvas').addClass('is-visible');
-  $('.overlay-page[data-action="closeMenu"]').addClass('is-visible');
-}
-
-
-// -----------------------------------------------------------------------
-
-
-
-// close off canvas menu
-// ---------------------
-feeJS.closeMenu = function() {
-  $('.container-navigation-offcanvas').removeClass('is-visible');
-  $('.overlay-page[data-action="closeMenu"]').removeClass('is-visible');
-}
-
-
-
-// -----------------------------------------------------------------------
-
-
-
-// show navigation sub level
-// -------------------------
-function showSublevel(target) {
-
-  // get current entry
-  // -----------------
-  var upperGradeLevel = $(target).parent();
-  var subLevel = $(target).next('.navigation-sublevel');
-
-  // set properties for current item
-  // -------------------------------
-  $(target).attr('data-action', 'hideSublevel');
-  $(target).find('.navigation-item-icon').css('transform', 'rotate(-90deg)');
-
-  // set level properties
-  // --------------------
-  subLevel.slideDown();
-
-  // delay 'addClass' until animation is done
-  // ----------------------------------------
-  setTimeout(function() {
-    upperGradelevel.addClass('is-open');
-  }, 300);
-}
-
-
-
-// -----------------------------------------------------------------------
-
-
-
-// hide navigation sub level
-// -------------------------
-function hideSublevel(target) {
-
-  // get current entry
-  // -----------------
-  var upperGradeLevel = $(target).parent();
-  var subLevel = $(target).next('.navigation-sublevel');
-
-  // set properties for current item
-  // -------------------------------
-  $(target).attr('data-action', 'showSublevel');
-  $(target).find('.navigation-item-icon').css('transform', 'rotate(0)');
-
-  // set level properties
-  // --------------------
-  subLevel.slideUp();
-
-  // delay 'removeClass' until animation is done
-  // -------------------------------------------
-  setTimeout(function() {
-    upperGradelevel.removeClass('is-open');
-  }, 300);
-}
-
-
-
-
-// -----------------------------------------------------------------------
-
-
-
-// open search
-// -----------
-feeJS.openSearch = function() {
-  $('.container-search').addClass('is-visible');
-  $('.overlay[data-action="closeSearch"]').addClass('is-visible');
-}
-
-
-
-// -----------------------------------------------------------------------
-
-
-
-// close search
-// ------------
-feeJS.closeSearch = function() {
-  $('.container-search').removeClass('is-visible');
-  $('.overlay[data-action="closeSearch"]').removeClass('is-visible');
 }
 
 
@@ -297,13 +218,13 @@ feeJS.toggleAccordion = function(target, openMultiple) {
     $('.js-toggleAccordion')
       .not(target)
       .removeClass('is-open')
-      .next('.c-accordion-item__content')
+      .next('.c-accordion__content')
       .hide('fast');
   }
 
   $(target)
     .toggleClass('is-open')
-    .next('.c-accordion-item__content')
+    .next('.c-accordion__content')
     .slideToggle('fast');
 }
 
@@ -317,14 +238,9 @@ feeJS.toggleAccordion = function(target, openMultiple) {
 // ------------------
 feeJS.toggleTab = function(target) {
 
-  // there can only be one
-  // ---------------------
-  $('.tabs-navigation__item.is-active, .tabs-content__item.is-active').removeClass('is-active');
-
-
-  // open the chosen one
-  // -------------------
   var tabTarget = $(target).attr('data-tabtarget');
+
+  $('.js-chooseTab, .js-toggleTab').removeClass('is-active');
   $(target).addClass('is-active');
   $(tabTarget).addClass('is-active');
 }
@@ -385,7 +301,3 @@ feeJS.switchModal = function(target) {
   feeJS.closeModal();
   feeJS.openModal(target);
 }
-
-
-
-// -----------------------------------------------------------------------

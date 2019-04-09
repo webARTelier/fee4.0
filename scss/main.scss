@@ -42,14 +42,6 @@
 
 
 
-// get navigation styles
-// ---------------------
-@import 'partials/navigation/navigation_icons';
-@import 'partials/navigation/navigation_main_mobile';
-@import 'partials/navigation/navigation_main_desktop';
-
-
-
 // get element styles
 // ------------------
 @import 'partials/elements/buttons';
@@ -58,8 +50,6 @@
 @import 'partials/elements/tables';
 @import 'partials/elements/images';
 
-@import 'partials/elements/intro';
-@import 'partials/elements/text';
 @import 'partials/elements/gallery';
 @import 'partials/elements/tabs';
 @import 'partials/elements/accordion';

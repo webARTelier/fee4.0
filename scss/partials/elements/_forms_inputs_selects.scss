@@ -4,12 +4,8 @@
 // ================================================================
 
 // CUSTOM SELECT INPUT STYLES
-// --------------------------
-// NOTE: this partial uses the variables from '_form_inputs.scss'
-// and therefore must be included after '_form_inputs.scss'!
 
 // ================================================================
-
 
 
 
@@ -39,6 +35,8 @@ select {
   // ---------------
   background: url(#{$path-images}arrow_select.svg) right 1em center/1em no-repeat;
 }
+
+
 
 // disabled selects
 // ----------------

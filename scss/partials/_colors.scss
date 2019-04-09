@@ -29,7 +29,8 @@ $color-fee-sand:                            #eddfc5;
 $color-fee-sand-hover:                      shade($color-fee-sand, 20);
 $color-fee-sand-light:                      tint($color-fee-sand, 80);
 
-$color-red:                                 #bf0620;    // used as highlight color
+$color-red:                                 #bf0620;    // used as error color
+$color-green:                               #18a909;    // used as success color
 
 $color-copy:                                tint(black, 33);
 
@@ -57,7 +58,8 @@ $color-copy:                                tint(black, 33);
   --color-contrast-font:                    #{$color-fee-sand};
   --color-contrast-light:                   #{$color-fee-sand-light};
 
-  --color-highlight:                        #{$color-red};
+  --color-success:                          #{$color-green};
+  --color-error:                            #{$color-red};
 
   --color-copy:                             #{$color-copy};
 
@@ -78,15 +80,19 @@ $color-copy:                                tint(black, 33);
 
 // shadows and gradients
 // ---------------------
-.u-shadow-text {
+.u-shadow--text {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.2) !important;
 }
 
-.u-shadow-box {
+
+
+.u-shadow--box {
   box-shadow: 0 1px 1px rgba(0,0,0,0.1) !important;
 }
 
-.u-shadow-modal {
+
+
+.u-shadow--modal {
   box-shadow: 0 3px 8px rgba(0,0,0,0.4) !important;
 }
 
@@ -94,10 +100,12 @@ $color-copy:                                tint(black, 33);
 
 // background colors
 // -----------------
-.u-bg-main {
+.u-bg--main {
   background-color: --color-main !important;
 }
 
-.u-bg-contrast {
+
+
+.u-bg--contrast {
   background-color: --color-contrast !important;
 }
