@@ -9,15 +9,19 @@
 
 
 
-%unit {
+.c-unit {
   position: relative;
-  display: block;     // fix for firefox absolute positioning bug
+  display: block;     // fix firefox absolute positioning bug
 
   // unit display
   // ------------
   &:after {
     @include typo-bold;
-    @include absolute(top 1px right 1px bottom 1px);
+
+    position: absolute;
+    top: var(--input-border-width);
+    right: var(--input-border-width);
+    bottom: var(--input-border-width);
 
     display: flex;
     justify-content: center;
@@ -29,19 +33,23 @@
     color: var(--input-color);
     background-color: transparent;
   }
-}
 
-.unit-euro {
-  @extend %unit;
 
-  &:after {
-    content: '€';
-    width: 1.5em;
-  }
 
-  // shelter space for unit display
-  // ------------------------------
-  input {
-    padding-right: 1.6em;
+
+  &--euro {
+
+    &:after {
+      content: '€';
+      width: 1.5em;
+    }
+
+
+
+    // shelter space for unit display
+    // ------------------------------
+    input {
+      padding-right: 1.6em;
+    }
   }
 }

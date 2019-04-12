@@ -12,38 +12,37 @@
 .c-tabNav {
   display: flex;
   justify-content: flex-start;
+
+
+
+  &__item {
+    margin-right: 0.2em;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    padding: 0.5em 1em;
+    text-align: center;
+
+    color: white;
+    background-color: var(--color-main);
+
+    transition: all var(--anim-dur) var(--anim-ease);
+    cursor: pointer;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: var(--color-copy);
+      background-color: var(--color-contrast);
+    }
+
+    &.is-active {
+      color: var(--color-copy);
+      background-color: var(--color-contrast);
+    }
+  }
 }
-
-
-
-.c-tabNav__item {
-  margin-right: 0.2em;
-  border-top-left-radius: var(--border-radius);
-  border-top-right-radius: var(--border-radius);
-  padding: 0.5em 1em;
-  text-align: center;
-
-  color: white;
-  background-color: var(--color-main);
-
-  transition: all var(--anim-dur) var(--anim-ease);
-  cursor: pointer;
-
-  &:last-of-type {
-    margin-right: 0;
-  }
-
-  &:hover {
-    color: var(--color-copy);
-    background-color: var(--color-contrast);
-  }
-
-  &.is-active {
-    color: var(--color-copy);
-    background-color: var(--color-contrast);
-  }
-}
-
 
 
 .c-tab {

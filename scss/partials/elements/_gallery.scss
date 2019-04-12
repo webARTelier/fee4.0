@@ -14,25 +14,25 @@
   @include grid(1, 2, 3, 4, 5);
 
   grid-gap: var(--grid-gutter-gallery-column) var(--grid-gutter-gallery-row);
-}
 
 
 
-.c-gallery__item {
-  @include aspect-ratio(16, 9);
+  &__item {
+    @include aspect-ratio(16, 9);
 
-  display: block;
-}
-
-
-
-.c-gallery__imagecontainer {
-  @include absolute(top 0 left 0);
-  @include size(100%);
-}
+    display: block;
+  }
 
 
 
-.c-gallery__image {
-  @include fit(cover, $pos-y: top);
+  &__imgBox {
+    @include absolute(top 0 left 0);
+    @include size(100%);
+  }
+
+
+
+  &__img {
+    @include fit(cover, $pos-y: top);
+  }
 }

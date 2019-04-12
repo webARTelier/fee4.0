@@ -9,11 +9,6 @@
 
 
 
-// modals
-// ------
-
-
-
 .c-modal {
 
   --modal-minwidth:     280px;
@@ -50,38 +45,39 @@
     visibility: visible;
     transform: translate(-50%, -50%) scale(1);
   }
-}
 
 
 
-.c-modal__close {
-  @include size(var(--size-touchable));
 
-  position: absolute;
-  top: var(--modal-padding);
-  right: var(--modal-padding);
+  &__close {
+    @include size(var(--size-touchable));
 
-  z-index: 1;
-  display: flex;
-  cursor: pointer;
+    position: absolute;
+    top: var(--modal-padding);
+    right: var(--modal-padding);
 
-  transition: all var(--anim-dur) var(--anim-ease);
+    z-index: 1;
+    display: flex;
+    cursor: pointer;
 
-  // hover state in desktop view only
-  // --------------------------------
-  @include vp-large-up {
+    transition: all var(--anim-dur) var(--anim-ease);
 
-    &:hover {
-      background-color: shade(white, 5);
+    // hover state in desktop view only
+    // --------------------------------
+    @include vp-large-up {
+
+      &:hover {
+        background-color: shade(white, 5);
+      }
     }
   }
-}
 
 
 
-.c-modal__icon {
-  @include size(50%);
+  &__icon {
+    @include size(50%);
 
-  margin: auto;
-  fill: var(--color-main);
+    margin: auto;
+    fill: var(--color-main);
+  }
 }

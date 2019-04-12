@@ -14,9 +14,13 @@
   <body>
 
     <!-- header section wrapper -->
-    <div class="o-wrapper-header">
+    <div class="l-wrapper-header">
 
-
+      <div class="l-row u-bg--main">
+        <div class="l-content l-content--centered c-topbar">
+          <a class="c-topbar__headline" href="index.html">&lArr; zurück zur Startseite</a>
+        </div>
+      </div>
 
     </div>
     <!-- end header section wrapper -->
@@ -28,15 +32,15 @@
 
 
     <!-- content section wrapper -->
-    <div class="o-wrapper-content">
+    <div class="l-wrapper-content">
 
-      <div class="o-row">
+      <div class="l-row">
 
-        <div class="o-content o-content--centered u-space-topbottom">
+        <div class="l-content l-content--centered u-spaceTopBottom">
 
           <h1>Einspaltiges Formular</h1>
 
-          <form class="o-container-form u-space-top">
+          <form class="o-container-form u-spaceTop">
 
             <label>Anrede</label>
             <div class="o-container-radiobuttons">
@@ -46,6 +50,10 @@
               <label for="frau">Frau</label>
             </div>
 
+            <label for="summe">Summe</label>
+            <span class="c-unit c-unit--euro">
+              <input id="summe" name="summe" required>
+            </span>
 
             <label for="vorname">Vorname</label>
             <input id="vorname" name="vorname" required>
@@ -129,14 +137,14 @@
 
       </div>
 
-      <div class="o-row">
+      <div class="l-row">
 
-        <div class="o-content o-content--centered u-space-topbottom">
+        <div class="l-content l-content--centered u-spaceTopBottom">
 
           <h1>Zweispaltiges Formular</h1>
 
           <!-- form with two columns -->
-          <form class="u-space-top">
+          <form class="u-spaceTop">
 
             <!-- form columns container -->
             <div class="o-container-form-columns">
@@ -152,6 +160,10 @@
                   <label for="form2-female">Frau</label>
                 </div>
 
+                <label for="form2-summe">Summe</label>
+                <span class="c-unit c-unit--euro">
+                  <input id="form2-summe" name="summe" required>
+                </span>
 
                 <label for="form2-surname">Vorname</label>
                 <input id="form2-surname" name="surname" required>
@@ -246,12 +258,19 @@
 
 
     <!-- footer section wrapper -->
-    <div class="o-wrapper-footer">
+    <div class="l-wrapper-footer">
 
-
+      <div class="l-row u-bg--contrast--light">
+        <div class="l-content l-content--centered c-footer">
+          <img class="c-footer--logo" src="images/_demo/logo_fairy.svg" alt="FEE">
+          <span class="c-footer--text">made with love and FEE</span>
+        </div>
+      </div>
 
     </div>
     <!-- end footer section wrapper -->
+
+
 
     <!-- importing required javascripts -->
     <script src="js/custom_min.js"></script>

@@ -64,48 +64,52 @@
     }
   }
 
-  .c-button__icon {
+
+
+  &__icon {
     fill: var(--button-color);
   }
 
-  .c-button__text {
+
+
+  &__text {
     color: var(--button-color);
   }
-}
 
 
 
-.c-button__flex {
+  &__flex {
 
-  // NOTE: since html buttons can not be set to display: flex
-  // we have to insert an extra div that works as flex container
-  // -----------------------------------------------------------
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    // NOTE: since html buttons can not be set to display: flex
+    // we have to insert an extra span that works as flex container
+    // ------------------------------------------------------------
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  border-radius: var(--border-radius);
+    border-radius: var(--border-radius);
 
-  transition: all var(--anim-dur) var(--anim-ease);
-  pointer-events: none;
-}
-
-
-
-.c-button__icon {
-  @include size(1.7em);
-
-  padding: 0 0.3em;
-}
+    transition: all var(--anim-dur) var(--anim-ease);
+    pointer-events: none;
+  }
 
 
 
-.c-button__text {
-  display: inline;
-}
+  &__icon {
+    @include size(1.7em);
+
+    padding: 0 0.3em;
+  }
 
 
 
-.c-button--100 {
-  width: 100%;
+  &__text {
+    display: inline;
+  }
+
+
+
+  &--100 {
+    width: 100%;
+  }
 }

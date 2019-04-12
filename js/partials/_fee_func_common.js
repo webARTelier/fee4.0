@@ -157,9 +157,9 @@ feeJS.showAtScroll = function(target, scrollPosition) {
 // prepare element with defined aspect ratio
 // (YouTube/Vimeo iframes, ...) for responsive resizing
 // NOTE: elements to be resized must consist of
-// - element itself (default markup: data-action="prepareResponsive")
-// - responsive container (default markup: data-type="responsiveContainer")
-// ------------------------------------------------------------------------
+// - element itself (default markup: js-addAspectRatio")
+// - responsive container (default markup: js-responsiveContainer")
+// ----------------------------------------------------------------
 feeJS.addAspectRatio = function(target) {
 
   // figure out and save aspect ratio ...
@@ -168,8 +168,8 @@ feeJS.addAspectRatio = function(target) {
 
   // ... update element status ...
   // -----------------------------
-    .removeAttr('data-action')
-    .attr('data-type', 'preparedResize')
+    .removeClass('js-addAspectRatio')
+    .addClass('js-resizeAspectRatio')
 
   // ... and remove the hard coded width/height
   // ------------------------------------------
@@ -186,9 +186,9 @@ feeJS.addAspectRatio = function(target) {
 // resize prepared element with defined aspect ratio
 // (YouTube/Vimeo iframes, ...) for responsive resizing
 // NOTE: elements to be resized must consist of
-// - element itself (default markup: '.js-prepareResponsive')
-// - responsive container (default markup: '.js-responsiveContainer')
-// ------------------------------------------------------------------
+// - element itself (default markup: js-addAspectRatio")
+// - responsive container (default markup: js-responsiveContainer")
+// ----------------------------------------------------------------
 feeJS.resizeAspectRatio = function(target) {
 
   // get width of parent responsive container

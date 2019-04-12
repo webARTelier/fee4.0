@@ -23,18 +23,16 @@
       text-decoration: underline;
     }
   }
-}
 
 
 
-// neutral
-// -------
-.c-link--neutral {
-  color: inherit;
-  text-decoration: none;
-
-  &:hover {
+  &--neutral {
     color: inherit;
     text-decoration: none;
+
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
   }
 }

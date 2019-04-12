@@ -11,69 +11,69 @@
 
 .c-accordion {
   position: relative;
-}
 
 
 
-.c-accordion__head {
-  position: relative;
+  &__head {
+    position: relative;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  margin-top: 0.2em;
-  border-radius: var(--border-radius);
-  padding: 0.5em 1em;
-  cursor: pointer;
+    margin-top: 0.2em;
+    border-radius: var(--border-radius);
+    padding: 0.5em 1em;
+    cursor: pointer;
 
-  background-color: var(--color-main);
+    background-color: var(--color-main);
 
-  transition: all var(--anim-dur) var(--anim-ease);
+    transition: all var(--anim-dur) var(--anim-ease);
 
-  &:hover {
-    background-color: var(--color-contrast);
-  }
-
-  &.is-open {
-    background-color: var(--color-contrast);
-
-    .c-accordion__headline {
-      color: var(--color-main);
+    &:hover {
+      background-color: var(--color-contrast);
     }
 
-    .c-accordion__icon {
-      transform: rotate(180deg);
-      fill: var(--color-main);
+    &.is-open {
+      background-color: var(--color-contrast);
+
+      .c-accordion__headline {
+        color: var(--color-main);
+      }
+
+      .c-accordion__icon {
+        transform: rotate(180deg);
+        fill: var(--color-main);
+      }
     }
   }
-}
 
 
 
-.c-accordion__headline {
-  @include typo-headline-3;
+  &__headline {
+    @include typo-headline-3;
 
-  color: white;
-  transition: all var(--anim-dur) var(--anim-ease);
-}
-
-
-
-.c-accordion__icon {
-  @include size(1em);
-
-  fill: white;
-  transition: all var(--anim-dur) var(--anim-ease);
-}
+    color: white;
+    transition: all var(--anim-dur) var(--anim-ease);
+  }
 
 
 
-.c-accordion__content {
-  display: none;
+  &__icon {
+    @include size(1em);
 
-  border-radius: var(--border-radius);
-  padding: 0.5em 1em;
+    fill: white;
+    transition: all var(--anim-dur) var(--anim-ease);
+  }
 
-  background-color: shade(white, 5);
+
+
+  &__content {
+    display: none;
+
+    border-radius: var(--border-radius);
+    padding: 0.5em 1em;
+
+    background-color: shade(white, 5);
+  }
 }

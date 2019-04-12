@@ -13,7 +13,7 @@
   @include fixed(top 0 left 0);
   @include size(100%);
 
-  z-index: z('overlays');
+  z-index: var(--z-overlays);
   visibility: hidden;
   opacity: 0;
 

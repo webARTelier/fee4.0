@@ -34,13 +34,11 @@ select {
   // new arrow image
   // ---------------
   background: url(#{$path-images}arrow_select.svg) right 1em center/1em no-repeat;
-}
 
 
 
-// disabled selects
-// ----------------
-select:disabled {
-  color: rgba(0, 0, 0, 0.25);
-  background-color: rgba(0, 0, 0, 0.15);
+  &:disabled {
+    color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.15);
+  }
 }

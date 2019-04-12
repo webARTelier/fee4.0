@@ -27,53 +27,49 @@ ol {
     margin-top: var(--li-space-top);
     list-style: outside disc;
   }
-}
 
 
 
-// ordered lists
-// -------------
-.c-list--decimal {
-  display: table;
-  margin: 1em 0 0;
-  padding: 0;
-  counter-reset: olc;
+  &--decimal {
+    display: table;
+    margin: 1em 0 0;
+    padding: 0;
+    counter-reset: olc;
 
-  li {
-    position: relative;
-    padding-top: var(--li-space-top);
-    padding-left: var(--li-space-left);
-    list-style: none;
-    counter-increment: olc;
+    li {
+      position: relative;
+      padding-top: var(--li-space-top);
+      padding-left: var(--li-space-left);
+      list-style: none;
+      counter-increment: olc;
 
-    &:before {
-      @include absolute(top var(--li-space-left) left 0);
+      &:before {
+        @include absolute(top var(--li-space-left) left 0);
 
-      content: counter(olc) ".";
-      text-align: right;
+        content: counter(olc) ".";
+        text-align: right;
+      }
     }
   }
-}
 
 
 
-// custom bullets lists
-// --------------------
-.c-list--icon {
-  margin: 1em 0 0;
-  padding-left: 0;
+  &--icon {
+    margin: 1em 0 0;
+    padding-left: 0;
 
-  li {
-    position: relative;
-    margin-top: var(--li-space-top);
-    padding-left: var(--li-space-left);
-    list-style: none;
-  }
+    li {
+      position: relative;
+      margin-top: var(--li-space-top);
+      padding-left: var(--li-space-left);
+      list-style: none;
+    }
 
-  svg {
-    @include absolute(top 0.4em left 0);
-    @include size(0.8em);
+    svg {
+      @include absolute(top 0.4em left 0);
+      @include size(0.8em);
 
-    fill: var(--color-main);
+      fill: var(--color-main);
+    }
   }
 }

@@ -253,3 +253,9 @@ h3 {
 .u-copy--bold {
   @include typo-copy-bold;
 }
+
+.u-copy--small {
+  @include typo-copy;
+
+  font-size: 12px;
+}

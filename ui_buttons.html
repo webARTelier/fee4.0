@@ -14,9 +14,13 @@
   <body>
 
     <!-- header section wrapper -->
-    <div class="o-wrapper-header">
+    <div class="l-wrapper-header">
 
-
+      <div class="l-row u-bg--main">
+        <div class="l-content l-content--centered c-topbar">
+          <a class="c-topbar__headline" href="index.html">&lArr; zurück zur Startseite</a>
+        </div>
+      </div>
 
     </div>
     <!-- end header section wrapper -->
@@ -28,34 +32,34 @@
 
 
     <!-- content section wrapper -->
-    <div class="o-wrapper-content">
+    <div class="l-wrapper-content">
 
-      <div class="o-row">
-        <div class="o-content o-content--centered u-space-topbottom">
+      <div class="l-row">
+        <div class="l-content l-content--centered u-spaceTopBottom">
 
           <h1>Buttons</h1>
 
           <!-- content wrapper -->
-          <div class="c-wrapper u-space-top">
+          <div class="c-wrapper u-spaceTop">
 
             <button class="c-button">Default button</button>
 
             <br><br>
 
             <button class="c-button">
-              <div class="c-button__flex">
+              <span class="c-button__flex">
                 <svg class="c-button__icon"><use xlink:href="images/icons.svg#icon-info"></use></svg>
-                <div class="c-button__text">Button mit Icon links</div>
-              </div>
+                <span class="c-button__text">Button mit Icon links</span>
+              </span>
             </button>
 
             <br><br>
 
             <button class="c-button">
-              <div class="c-button__flex">
-                <div class="c-button__text">Button mit Icon rechts</div>
+              <span class="c-button__flex">
+                <span class="c-button__text">Button mit Icon rechts</span>
                 <svg class="c-button__icon"><use xlink:href="images/icons.svg#icon-info"></use></svg>
-              </div>
+              </span>
             </button>
 
             <br><br>
@@ -75,10 +79,10 @@
             <br><br>
 
             <a class="c-button" href="javascript:;">
-              <div class="c-button__flex">
-                <div class="c-button__text">Link als Button mit Icon rechts</div>
+              <span class="c-button__flex">
+                <span class="c-button__text">Link als Button mit Icon rechts</span>
                 <svg class="c-button__icon"><use xlink:href="images/icons.svg#icon-info"></use></svg>
-              </div>
+              </span>
             </a>
 
             <br><br>
@@ -89,19 +93,19 @@
             <br><br>
 
             <button class="c-button c-button--100">
-              <div class="c-button__flex">
+              <span class="c-button__flex">
                 <svg class="c-button__icon"><use xlink:href="images/icons.svg#icon-info"></use></svg>
-                <div class="c-button__text">Button mit Icon links 100&thinsp;% Breite</div>
-              </div>
+                <span class="c-button__text">Button mit Icon links 100&thinsp;% Breite</span>
+              </span>
             </button>
 
             <br><br>
 
             <button class="c-button c-button--100">
-              <div class="c-button__flex">
-                <div class="c-button__text">Button mit Icon rechts 100&thinsp;% Breite</div>
+              <span class="c-button__flex">
+                <span class="c-button__text">Button mit Icon rechts 100&thinsp;% Breite</span>
                 <svg class="c-button__icon"><use xlink:href="images/icons.svg#icon-info"></use></svg>
-              </div>
+              </span>
             </button>
 
             <br><br>
@@ -112,19 +116,19 @@
             <br><br>
 
             <a class="c-button c-button--100" href="javascript:;">
-              <div class="c-button__flex">
+              <span class="c-button__flex">
                 <svg class="c-button__icon"><use xlink:href="images/icons.svg#icon-info"></use></svg>
-                <div class="c-button__text">Link als Button mit Icon links 100&thinsp;% Breite</div>
-              </div>
+                <span class="c-button__text">Link als Button mit Icon links 100&thinsp;% Breite</span>
+              </span>
             </a>
 
             <br><br>
 
             <a class="c-button c-button--100" href="javascript:;">
-              <div class="c-button__flex">
-                <div class="button__text">Link als Button mit Icon rechts 100&thinsp;% Breite</div>
+              <span class="c-button__flex">
+                <span class="c-button__text">Link als Button mit Icon rechts 100&thinsp;% Breite</span>
                 <svg class="c-button__icon"><use xlink:href="images/icons.svg#icon-info"></use></svg>
-              </div>
+              </span>
             </a>
 
           </div>
@@ -144,12 +148,19 @@
 
 
     <!-- footer section wrapper -->
-    <div class="o-wrapper-footer">
+    <div class="l-wrapper-footer">
 
-
+      <div class="l-row u-bg--contrast--light">
+        <div class="l-content l-content--centered c-footer">
+          <img class="c-footer--logo" src="images/_demo/logo_fairy.svg" alt="FEE">
+          <span class="c-footer--text">made with love and FEE</span>
+        </div>
+      </div>
 
     </div>
     <!-- end footer section wrapper -->
+
+
 
     <!-- importing required javascripts -->
     <script src="js/custom_min.js"></script>

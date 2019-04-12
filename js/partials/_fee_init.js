@@ -67,7 +67,7 @@ $(document).ready(function() {
   // prepare resizing for elements with width/height attribute
   // like vimeo/youtube videos or google map iframes
   // ---------------------------------------------------------
-  $('.js-prepareResponsive').each(function() {
+  $('.js-addAspectRatio').each(function() {
     feeJS.addAspectRatio(this);
   });
 
@@ -102,7 +102,7 @@ $(document).ready(function() {
 
 
   // switch modals
-  // -------------------------
+  // -------------
   $('html').on('click', '.js-switchModal', function() {
     feeJS.switchModal($(this).attr('data-target'));
   });
@@ -122,7 +122,7 @@ $(document).ready(function() {
     // responsive resizing for elements with width/height attribute
     // like vimeo/youtube videos or google map iframes
     // ------------------------------------------------------------
-    $('[data-type="preparedResize"]').each(function() {
+    $('.js-resizeAspectRatio').each(function() {
       feeJS.resizeAspectRatio(this);
     });
 

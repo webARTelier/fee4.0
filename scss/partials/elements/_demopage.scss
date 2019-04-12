@@ -1,0 +1,70 @@
+
+
+
+// ================================================================
+
+// DEMO PAGE STYLES
+
+// ================================================================
+
+
+
+.u-bg--main {
+  background-color: var(--color-main);
+}
+
+
+
+.u-bg--contrast--light {
+  background-color: var(--color-contrast-light);
+}
+
+
+
+.c-topbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding-top: 1em;
+  padding-bottom: 1em;
+
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+
+
+
+  &__headline {
+    text-decoration: none;
+    color: var(--color-contrast);
+  }
+}
+
+
+
+.c-footer {
+  @include typo-small;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0.5em 0;
+  text-align: center;
+  color: var(--color-primary);
+
+
+
+  &--logo {
+    @include size(4em);
+
+    margin-right: 1em;
+  }
+
+
+
+  &--text {
+    color: var(--color-main);
+    margin-top: 1em;
+  }
+}

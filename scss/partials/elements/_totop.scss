@@ -40,7 +40,9 @@
     transform: scale(1);
   }
 
-  .c-totop__icon {
+
+
+  &__icon {
     @include size(33%);
 
     margin: auto;

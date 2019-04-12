@@ -28,19 +28,19 @@ body {
 
 
 
-.o-wrapper-header {
+.l-wrapper-header {
   grid-area: page-header;
 }
 
 
 
-.o-wrapper-content {
+.l-wrapper-content {
   grid-area: page-content;
 }
 
 
 
-.o-wrapper-footer {
+.l-wrapper-footer {
   grid-area: page-footer;
 }
 
@@ -52,7 +52,7 @@ body {
 
 // layout rows
 // -----------
-.o-row {
+.l-row {
   position: relative;
 
   display: grid;
@@ -75,14 +75,14 @@ body {
 
 // content layouts
 // ---------------
-.o-content {
+.l-content {
   position: relative;
   display: block;
 }
 
 
 
-.o-content--centered {
+.l-content--centered {
   grid-area: row-content;
   justify-items: stretch;
   align-items: stretch;
@@ -90,7 +90,7 @@ body {
 
 
 
-.o-content--fullwidth {
+.l-content--fullwidth {
   grid-column: 1 /span 3;
   justify-items: stretch;
   align-items: stretch;
@@ -107,19 +107,19 @@ body {
 
 // default vertical content space
 // ------------------------------
-.u-space-top {
-  padding-top: var(--content-space-y) !important;
+.u-spaceTop {
+  margin-top: var(--content-space-y) !important;
 }
 
 
 
-.u-space-bottom {
-  padding-bottom: var(--content-space-y) !important;
+.u-spaceBottom {
+  margin-bottom: var(--content-space-y) !important;
 }
 
 
 
-.u-space-topbottom {
-  padding-top: var(--content-space-y) !important;
-  padding-bottom: var(--content-space-y) !important;
+.u-spaceTopBottom {
+  margin-top: var(--content-space-y) !important;
+  margin-bottom: var(--content-space-y) !important;
 }
