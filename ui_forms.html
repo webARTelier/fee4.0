@@ -41,41 +41,41 @@
 
           <h1>Einspaltiges Formular</h1>
 
-          <form class="o-container-form u-spaceTop">
+          <form class="l-form u-spaceTop">
 
             <label>Anrede</label>
-            <div class="o-container-radiobuttons">
-              <input id="herr" name="geschlecht" type="radio" value="mann" required>
-              <label for="herr">Herr</label>
-              <input id="frau" name="geschlecht" type="radio" value="frau" required>
-              <label for="frau">Frau</label>
+            <div class="l-radiobuttons">
+              <input id="herr" class="c-radio" name="geschlecht" type="radio" value="mann" required>
+              <label class="c-radio__label" for="herr">Herr</label>
+              <input id="frau" class="c-radio" name="geschlecht" type="radio" value="frau" required>
+              <label class="c-radio__label" for="frau">Frau</label>
             </div>
 
             <label for="summe">Summe</label>
             <span class="c-unit c-unit--euro">
-              <input id="summe" name="summe" required>
+              <input id="summe" class="c-input" name="summe" required>
             </span>
 
             <label for="vorname">Vorname</label>
-            <input id="vorname" name="vorname" required>
+            <input id="vorname" class="c-input" name="vorname" required>
 
             <label for="nachname">Nachname</label>
-            <input id="nachname" name="nachname" required>
+            <input id="nachname" class="c-input" name="nachname" required>
 
             <label>Straße/Nr</label>
-            <div class="u-split-input-60-40">
-              <input id="strasse" name="strasse" required>
-              <input id="hausnummer" name="hausnummer" required>
+            <div class="l-splitInput l-splitInput--60-40">
+              <input id="strasse" class="c-input" name="strasse" required>
+              <input id="hausnummer" class="c-input" name="hausnummer" required>
             </div>
 
             <label>PLZ/Ort</label>
-            <div class="u-split-input-40-60">
-              <input id="plz" name="plz" type="number" max="99999" required>
-              <input id="ort" name="ort" required>
+            <div class="l-splitInput l-splitInput--40-60">
+              <input id="plz" class="c-input" name="plz" type="number" required>
+              <input id="ort" class="c-input" name="ort" required>
             </div>
 
             <label for="land">Land</label>
-            <select id="land" name="land" required>
+            <select id="land" class="c-select" name="land" required>
               <option value="">- bitte wählen -</option>
               <option value="Deutschland">Deutschland</option>
               <option value="Österreich">Österreich</option>
@@ -84,23 +84,23 @@
             </select>
 
             <label>Geburtsdatum</label>
-            <div class="u-split-input-30-30-40">
-              <input id="geburtsdatum-d" name="gtag" type="number"  min="1" max="31" placeholder="TT" required>
-              <input id="geburtsdatum-m" name="gmonat" type="number" min="1" max="12" placeholder="MM" required>
-              <input id="geburtsdatum-y" name="gjahr" type="number" min="1920" max="2000" placeholder="JJJJ" required>
+            <div class="l-splitInput l-splitInput--30-30-40">
+              <input id="geburtsdatum-d" class="c-input" name="gtag" type="number"  min="1" max="31" placeholder="TT" required>
+              <input id="geburtsdatum-m" class="c-input" name="gmonat" type="number" min="1" max="12" placeholder="MM" required>
+              <input id="geburtsdatum-y" class="c-input" name="gjahr" type="number" min="1920" max="2000" placeholder="JJJJ" required>
             </div>
 
             <label>Telefon</label>
-            <div class="u-split-input-40-60">
-              <input id="vorwahl" name="vorwahltel" required>
-              <input id="telefon" name="tel" required>
+            <div class="l-splitInput l-splitInput--40-60">
+              <input id="vorwahl" class="c-input" name="vorwahltel" required>
+              <input id="telefon" class="c-input" name="tel" required>
             </div>
 
             <label>E-Mail</label>
-            <input id="email" type="email" name="email" required>
+            <input id="email" type="email" class="c-input" name="email" required>
 
             <label for="beruf">Beruf</label>
-            <select id="beruf" name="beruf" required>
+            <select id="beruf" class="c-select" name="beruf" required>
               <option value="">- bitte wählen -</option>
               <option value="Beamter">Beamter</option>
               <option value="Angestellter">Angestellter</option>
@@ -111,23 +111,23 @@
               <option value="Sonstige">Sonstige</option>
             </select>
 
-            <div class="u-span-label-input">
-              <input id="datasecurity" name="datasecurity" type="checkbox" required>
-              <label for="datasecurity">Ja, ich habe den Inhalt und die Hinweise zum <a href="javascript:;">Datenschutz</a> gelesen und erkläre mich damit einverstanden.
+            <div class="l-splitInput l-spanLabelInput">
+              <input id="datasecurity" class="c-checkbox"name="datasecurity" type="checkbox" required>
+              <label class="c-checkbox__label" for="datasecurity">Ja, ich habe den Inhalt und die Hinweise zum <a href="javascript:;">Datenschutz</a> gelesen und erkläre mich damit einverstanden.
               </label>
             </div>
 
-            <div class="u-span-label-input">
-              <input id="agb" name="valid" type="checkbox" required>
-              <label for="agb">Ja, ich habe die <a href="javascript:;">AGB</a> gelesen und verstanden und bin mit der neutralen <a href="javascript:;">Konditionenanfrage</a> durch die Kreditpartner einverstanden.
+            <div class="l-spanLabelInput">
+              <input id="agb" class="c-checkbox" name="valid" type="checkbox" required>
+              <label class="c-checkbox__label" for="agb">Ja, ich habe die <a href="javascript:;">AGB</a> gelesen und verstanden und bin mit der neutralen <a href="javascript:;">Konditionenanfrage</a> durch die Kreditpartner einverstanden.
               </label>
             </div>
 
             <!-- empty spacer row -->
-            <span class="u-form-spacer">&nbsp;</span>
+            <span class="l-formSpacer">&nbsp;</span>
             <!-- end empty spacer row -->
 
-            <div class="u-span-label-input">
+            <div class="l-spanLabelInput">
               <button class="c-button js-submit">abschicken</button>
             </div>
 
@@ -148,44 +148,44 @@
           <form class="u-spaceTop">
 
             <!-- form columns container -->
-            <div class="o-container-form-columns">
+            <div class="l-grid l-grid--form">
 
-              <!-- upper/left form column -->
-              <div class="o-container-form">
+              <!-- form column -->
+              <div class="l-form">
 
                 <label>Anrede</label>
-                <div class="o-container-radiobuttons">
-                  <input id="form2-male" name="gender" type="radio" value="male" required>
-                  <label for="form2-male">Herr</label>
-                  <input id="form2-female" name="gender" type="radio" value="female" required>
-                  <label for="form2-female">Frau</label>
+                <div class="l-radiobuttons">
+                  <input id="form2-male" class="c-radio" name="gender" type="radio" value="male" required>
+                  <label class="c-radio__label" for="form2-male">Herr</label>
+                  <input id="form2-female" class="c-radio" name="gender" type="radio" value="female" required>
+                  <label class="c-radio__label" for="form2-female">Frau</label>
                 </div>
 
                 <label for="form2-summe">Summe</label>
                 <span class="c-unit c-unit--euro">
-                  <input id="form2-summe" name="summe" required>
+                  <input id="form2-summe" class="c-input" name="summe" required>
                 </span>
 
                 <label for="form2-surname">Vorname</label>
-                <input id="form2-surname" name="surname" required>
+                <input id="form2-surname" class="c-input" name="surname" required>
 
                 <label for="form2-name">Nachname</label>
-                <input id="form2-name" name="name" required>
+                <input id="form2-name" class="c-input" name="name" required>
 
                 <label>Straße/Nr</label>
-                <div class="u-split-input-60-40">
-                  <input id="form2-street" name="street" required>
-                  <input id="form2-no" name="no" required>
+                <div class="l-splitInput l-splitInput--60-40">
+                  <input id="form2-street" class="c-input" name="street" required>
+                  <input id="form2-no" class="c-input" name="no" required>
                 </div>
 
                 <label>PLZ/Ort</label>
-                <div class="u-split-input-40-60">
-                  <input id="form2-plz" name="plz" type="number" max="99999" required>
-                  <input id="form2-city" name="city" required>
+                <div class="l-splitInput l-splitInput--40-60">
+                  <input id="form2-plz" class="c-input" name="plz" type="number" max="99999" required>
+                  <input id="form2-city" class="c-input" name="city" required>
                 </div>
 
                 <label for="form2-country">Land</label>
-                <select id="form2-country" name="country" required>
+                <select id="form2-country" class="c-select" name="country" required>
                   <option value="">- bitte wählen -</option>
                   <option value="Deutschland">Deutschland</option>
                   <option value="Österreich">Österreich</option>
@@ -194,49 +194,61 @@
                 </select>
 
               </div>
-              <!-- end upper/left form column -->
+              <!-- end form column -->
 
-              <!-- lower/right form column -->
-              <div class="o-container-form">
+              <!-- form column -->
+              <div class="l-form">
 
-                <div class="u-form-spacer">&nbsp;</div>
+                <div class="l-formSpacer">&nbsp;</div>
+
+                <label for="form2-beruf">Beruf</label>
+                <select id="form2-beruf" class="c-select" name="form2-beruf" required>
+                  <option value="">- bitte wählen -</option>
+                  <option value="Beamter">Beamter</option>
+                  <option value="Angestellter">Angestellter</option>
+                  <option value="Arbeiter">Arbeiter</option>
+                  <option value="Rentner">Rentner</option>
+                  <option value="Selbständig">Selbständig</option>
+                  <option value="Hausmann">Hausmann</option>
+                  <option value="Sonstige">Sonstige</option>
+                </select>
 
                 <label>Geburtsdatum</label>
-                <div class="u-split-input-30-30-40">
-                  <input id="form2-birthdate-d" name="birthdate-d" type="number"  min="1" max="31" placeholder="TT" required>
-                  <input id="form2-birthdate-m" name="birthdate-m" type="number" min="1" max="12" placeholder="MM" required>
-                  <input id="form2-birthdate-y" name="birthdate-y" type="number" min="1920" max="2000" placeholder="JJJJ" required>
+                <div class="l-splitInput l-splitInput--30-30-40">
+                  <input id="form2-birthdate-d" class="c-input" name="birthdate-d" type="number"  min="1" max="31" placeholder="TT" required>
+                  <input id="form2-birthdate-m" class="c-input" name="birthdate-m" type="number" min="1" max="12" placeholder="MM" required>
+                  <input id="form2-birthdate-y" class="c-input" name="birthdate-y" type="number" min="1920" max="2000" placeholder="JJJJ" required>
                 </div>
 
                 <label>Telefon</label>
-                <div class="u-split-input-40-60">
-                  <input id="form2-prefix" name="prefix" required>
-                  <input id="form2-phone" name="phone" required>
+                <div class="l-splitInput l-splitInput--40-60">
+                  <input id="form2-prefix" class="c-input" name="prefix" required>
+                  <input id="form2-phone" class="c-input" name="phone" required>
                 </div>
 
                 <label>E-Mail</label>
-                <input id="form2-email" type="email" name="email" required>
+                <input id="form2-email" type="email" class="c-input" name="email" required>
 
-                <div class="u-span-label-input">
-                  <input id="form2-datasecurity" name="datasecurity" type="checkbox" required>
-                  <label for="form2-datasecurity">Ja, ich habe den Inhalt und die Hinweise zum <a href="javascript:;">Datenschutz</a> gelesen und erkläre mich damit einverstanden.
+                <div class="l-spanLabelInput">
+                  <input id="form2-datasecurity" class="c-checkbox" name="datasecurity" type="checkbox" required>
+                  <label class="c-checkbox__label" for="form2-datasecurity">Ja, ich habe den Inhalt und die Hinweise zum <a href="javascript:;">Datenschutz</a> gelesen und erkläre mich damit einverstanden.
                   </label>
                 </div>
 
-                <div class="u-span-label-input">
-                  <input id="form2-agb" name="valid" type="checkbox" required>
-                  <label for="form2-agb">Ja, ich habe die <a href="javascript:;">AGB</a> gelesen und verstanden und erkläre mich damit einverstanden.
+                <div class="l-spanLabelInput">
+                  <input id="form2-agb" class="c-checkbox" name="valid" type="checkbox" required>
+                  <label class="c-checkbox__label" for="form2-agb">Ja, ich habe die <a href="javascript:;">AGB</a> gelesen und verstanden und erkläre mich damit einverstanden.
                   </label>
                 </div>
 
-                <div class="u-form-spacer">&nbsp;</div>
+                <div class="l-formSpacer">&nbsp;</div>
 
-                <div class="u-span-label-input">
+                <div class="l-spanLabelInput">
                   <button class="c-button js-submit">abschicken</button>
                 </div>
 
               </div>
-              <!-- end lower/right form column -->
+              <!-- end form column -->
 
             </div>
             <!-- end form columns container -->

@@ -37,18 +37,10 @@
 
 
 
-// font styles for all inputs
-// --------------------------
-input,
-select,
-textarea {
+// inputs & text areas
+// -------------------
+.c-input {
   @include typo-copy;
-}
-
-
-
-input,
-textarea {
 
   // remove browser stylings
   // -----------------------
@@ -83,16 +75,16 @@ textarea {
       color: transparent;
     }
   }
-}
 
-// hide ridiculous chrome spinner in date inputs
-// ---------------------------------------------
-::-webkit-inner-spin-button {
-  display: none;
-}
+  // hide ridiculous chrome spinner in date inputs
+  // ---------------------------------------------
+  &::-webkit-inner-spin-button {
+    display: none;
+  }
 
-input[type=number] {
-  -moz-appearance: textfield;
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
 }
 
 

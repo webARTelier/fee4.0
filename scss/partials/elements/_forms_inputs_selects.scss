@@ -9,7 +9,8 @@
 
 
 
-select {
+.c-select {
+  @include typo-copy;
 
   // remove browser stylings
   // -----------------------

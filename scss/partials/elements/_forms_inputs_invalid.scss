@@ -26,28 +26,30 @@ $invalid-color-background:                  tint($color-red, 92);
 
   // standard inputs and text areas
   // ------------------------------
-  input:invalid,
-  textarea:invalid,
-  select:invalid {
-    border: 1px solid var(--color-error);
-    background-color: $invalid-color-background !important;  // selects need '!important'
+  .c-input,
+  .c-select {
+
+    &:invalid {
+      border: var(--input-border-width) solid var(--color-error);
+      background-color: $invalid-color-background !important;  // selects need '!important'
+    }
   }
 
 
 
   // some extra treatment for checkboxes/radio buttons
-  //--------------------------------------------------
-  input[type="checkbox"]:invalid,
-  input[type="radio"]:invalid {
+  // -------------------------------------------------
+  .c-checkbox:invalid,
+  .c-radio:invalid {
     border: none;
   }
 
-  input[type='checkbox']:invalid + label,
-  input[type='radio']:invalid + label {
+  .c-checkbox__label,
+  .c-radio__label {
     color: var(--color-error);
 
     &:before {
-      border: 1px solid var(--color-error);
+      border: var(--input-border-width) solid var(--color-error);
       background-color: $invalid-color-background;
     }
 

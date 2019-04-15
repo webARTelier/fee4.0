@@ -102,6 +102,24 @@ body {
 
 
 
+// grid elements
+// -------------
+.l-grid {
+  grid-gap: var(--grid-gutter-column) var(--grid-gutter-row);
+
+
+
+  &--form {
+    @include grid(1, 1, 2, 2, 2);
+  }
+}
+
+
+
+// ----------------------------------------------------------------
+
+
+
 // UTILITY LAYOUT CLASSES
 // ======================
 

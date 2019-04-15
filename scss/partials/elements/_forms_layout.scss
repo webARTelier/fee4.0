@@ -11,17 +11,7 @@
 
 :root {
   --label-width:                            6em;
-  --split-input-gutter:                     3px;
-}
-
-
-
-// container for form columns
-// --------------------------
-.o-container-form-columns {
-  @include grid(1, 1, 2, 2, 2);
-
-  grid-gap: var(--grid-gutter-column) var(--grid-gutter-row);
+  --splitInput--gutter:                     3px;
 }
 
 
@@ -32,7 +22,7 @@
 
 // container for form inputs
 // -------------------------
-.o-container-form {
+.l-form {
 
   // do not stretch in form columns
   // ------------------------------
@@ -50,9 +40,9 @@
 
 
 
-// custom input layouts
-// --------------------
-.o-container-radiobuttons {
+// radio buttons container
+// -----------------------
+.l-radiobuttons {
   display: flex;
 
   // make height match the height of other inputs
@@ -64,38 +54,47 @@
 
 
 
+// -----------------------------------------------------------------------
+
+
+
 // split inputs
 // ------------
-%split-input-all {
+.l-splitInput {
   display: grid;
-  grid-column-gap: var(--split-input-gutter);
+  grid-column-gap: var(--splitInput--gutter);
+
+
+
+  &--40-60 {
+    grid-template-columns: 4fr 6fr;
+  }
+
+
+
+  &--60-40 {
+    grid-template-columns: 6fr 4fr;
+  }
+
+
+
+  &--30-30-40 {
+    grid-template-columns: 3fr 3fr 4fr;
+  }
 }
 
-.u-split-input-40-60 {
-  @extend %split-input-all;
 
-  grid-template-columns: 4fr 6fr;
-}
 
-.u-split-input-60-40 {
-  @extend %split-input-all;
-
-  grid-template-columns: 6fr 4fr;
-}
-
-.u-split-input-30-30-40 {
-  @extend %split-input-all;
-
-  grid-template-columns: 3fr 3fr 4fr;
-}
+// -----------------------------------------------------------------------
 
 
 
 // span label & input column
 // -------------------------
-.u-span-label-input {
+.l-spanLabelInput {
   grid-column: 1 /span 2;
 }
+
 
 
 
@@ -105,7 +104,7 @@
 
 // form spacer row
 // ---------------
-.u-form-spacer {
+.l-formSpacer {
   grid-column: 1 /span 2;
 
   // make height match the height of other inputs
