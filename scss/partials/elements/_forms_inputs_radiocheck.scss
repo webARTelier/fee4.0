@@ -43,6 +43,10 @@
   display: block;
   margin-right: 1em;
   cursor: pointer;
+
+  &:before {
+    border-radius: 50%;
+  }
 }
 
 
@@ -84,14 +88,6 @@
       transition: all calc(var(--anim-dur) / 2) var(--anim-ease);
     }
   }
-}
-
-
-
-// some little extras for radio buttons
-// ------------------------------------
-.c-radio__label::before {
-  border-radius: 50%;
 }
 
 

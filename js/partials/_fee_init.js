@@ -83,6 +83,10 @@ $(document).ready(function() {
     feeJS.markSubmitted(this);
   });
 
+  $('.js-rangeslider').change(function() {
+    feeJS.rangeslider(this);
+  });
+
 
 
   // open modals
@@ -162,6 +166,12 @@ $(document).ready(function() {
   // ------------------------------------------------------------
   $(window).trigger('resize');
   $(window).trigger('scroll');
+
+  // rangeslider: trigger 'change' to place value bubble
+  // ---------------------------------------------------
+  $('.js-rangeslider').each(function() {
+    $(this).trigger('change');
+  })
 
 
 

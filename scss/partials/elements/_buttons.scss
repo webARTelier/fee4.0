@@ -67,6 +67,9 @@
 
 
   &__icon {
+    @include size(1.7em);
+
+    padding: 0 0.3em;
     fill: var(--button-color);
   }
 
@@ -91,20 +94,6 @@
 
     transition: all var(--anim-dur) var(--anim-ease);
     pointer-events: none;
-  }
-
-
-
-  &__icon {
-    @include size(1.7em);
-
-    padding: 0 0.3em;
-  }
-
-
-
-  &__text {
-    display: inline;
   }
 
 

@@ -266,7 +266,7 @@ feeJS.openModal = function(target) {
   // open modal and page overlay
   // ---------------------------
   $('.c-modal' +  target).addClass('is-visible');
-  $('.c-pageoverlay.js-closeModal').addClass('is-visible');
+  $('.c-pageOverlay.js-closeModal').addClass('is-visible');
 }
 
 
@@ -286,7 +286,7 @@ feeJS.closeModal = function() {
   // close modal and overlay
   // -----------------------
   $('.c-modal').removeClass('is-visible');
-  $('.c-pageoverlay').removeClass('is-visible');
+  $('.c-pageOverlay').removeClass('is-visible');
 }
 
 

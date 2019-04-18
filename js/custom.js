@@ -41,6 +41,7 @@ var feeJS = feeJS || {};
 
 //@prepros-append partials/_fee_func_common.js
 //@prepros-append partials/_fee_func_forms.js
+//@prepros-append partials/_fee_func_rangeslider.js
 
 
 
