@@ -43,8 +43,9 @@ body {
 
 
 
-// make svg parent elements clickable
-// ----------------------------------
+// for various reasons SVGs are tricky to click at,
+// so we delegate the click to parent element anyway
+// -------------------------------------------------
 svg {
   pointer-events: none;
 }

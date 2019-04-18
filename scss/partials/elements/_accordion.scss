@@ -51,8 +51,9 @@
 
 
   &__headline {
-    @include typo-headline-3;
+    @include responsive-font(2.5vw, 18px, 23px);
 
+    font-family: headline, serif;
     color: white;
     transition: all var(--anim-dur) var(--anim-ease);
   }
