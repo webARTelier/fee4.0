@@ -9,7 +9,7 @@
 
 
 
-.c-overlayImage {
+.c-overlayImg {
   display: inline-block;
 
 
@@ -60,7 +60,7 @@
 
   // choose your icon
   // ----------------
-  &.zoom {
+  &--zoom {
 
     &:after {
       content: "\2315";
@@ -70,7 +70,7 @@
 
 
 
-  &.more {
+  &--more {
 
     &:after {
       content: '\002b';
