@@ -36,15 +36,6 @@
 
     &.is-open {
       background-color: var(--color-contrast);
-
-      .c-accordion__headline {
-        color: var(--color-main);
-      }
-
-      .c-accordion__icon {
-        transform: rotate(180deg);
-        fill: var(--color-main);
-      }
     }
   }
 
@@ -56,6 +47,10 @@
     font-family: headline, serif;
     color: white;
     transition: all var(--anim-dur) var(--anim-ease);
+
+    .is-open & {
+      color: var(--color-main);
+    }
   }
 
 
@@ -65,6 +60,11 @@
 
     fill: white;
     transition: all var(--anim-dur) var(--anim-ease);
+
+    .is-open & {
+      transform: rotate(180deg);
+      fill: var(--color-main);
+    }
   }
 
 
