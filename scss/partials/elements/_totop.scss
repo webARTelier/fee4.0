@@ -29,10 +29,6 @@
   &:hover {
     border-color: var(--color-main);
     background-color: var(--color-contrast);
-
-    svg {
-      fill: var(--color-main);
-    }
   }
 
   &.is-visible {
@@ -47,5 +43,9 @@
 
     margin: auto;
     fill: var(--color-contrast);
+
+    .c-totop:hover & {
+      fill: var(--color-main);
+    }
   }
 }

@@ -148,7 +148,7 @@ $(document).ready(function() {
 
     // show to top element when scrolling down
     // ---------------------------------------
-    feeJS.showAtScroll('.totop', '150');
+    feeJS.showAtScroll('.c-totop', '150');
 
 
 
