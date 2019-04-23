@@ -9,45 +9,46 @@
 
 
 
-ul,
-ol {
-  --li-space-top: 0.5em;
-  --li-space-left: 1.5em;
-}
-
-
-
-// browser standard lists
-// ----------------------
 .c-list {
+  display: table;
   margin: 1em 0 0;
-  padding-left: var(--li-space-left);
+  padding: 0;
 
   li {
-    margin-top: var(--li-space-top);
-    list-style: outside disc;
+    position: relative;
+    margin-top: 0.5em;
+    padding-left: 1.5em;
+    list-style: none;
+
+    &:before {
+      @include absolute(top 0 left 0);
+
+      text-align: right;
+    }
+  }
+
+
+
+  &--default {
+
+    li {
+
+      &:before {
+        content: '\25cf';
+      }
+    }
   }
 
 
 
   &--decimal {
-    display: table;
-    margin: 1em 0 0;
-    padding: 0;
     counter-reset: olc;
 
     li {
-      position: relative;
-      padding-top: var(--li-space-top);
-      padding-left: var(--li-space-left);
-      list-style: none;
       counter-increment: olc;
 
       &:before {
-        @include absolute(top var(--li-space-left) left 0);
-
         content: counter(olc) ".";
-        text-align: right;
       }
     }
   }
@@ -55,15 +56,6 @@ ol {
 
 
   &--icon {
-    margin: 1em 0 0;
-    padding-left: 0;
-
-    li {
-      position: relative;
-      margin-top: var(--li-space-top);
-      padding-left: var(--li-space-left);
-      list-style: none;
-    }
 
     svg {
       @include absolute(top 0.4em left 0);
