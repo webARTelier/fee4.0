@@ -96,8 +96,8 @@
 // ----------------------------
 @include vp-large-up {
 
-  .c-checkbox:hover + .c-checkox__label::before,
-  .c-radio:hover + .c-radio__label::before {
+  .c-checkbox__label:hover:before,
+  .c-radio:hover + .c-radio__label:before {
     background-color: var(--radiocheck-color-bg-hover);
   }
 }
@@ -106,7 +106,7 @@
 
 // checkboxes - checked state
 // --------------------------
-.c-checkbox:checked + .c-checkbox__label::before {
+.c-checkbox:checked + .c-checkbox__label:before {
   @include size(0.6em, 1.2em);
 
   top: 0;
@@ -127,6 +127,6 @@
 
 // radio buttons - checked state
 // -----------------------------
-.c-radio:checked + .c-radio__label::before {
+.c-radio:checked + .c-radio__label:before {
   background: var(--radiocheck-color-bg-checked);
 }
