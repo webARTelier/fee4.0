@@ -20,7 +20,6 @@ var feeJS = feeJS || {};
 
 //@prepros-append vendor/jquery-3.2.1.min.js
 //@prepros-append vendor/ofi.browser.js
-//@prepros-append vendor/svg4everybody.js
 //@prepros-append vendor/jquery-smartphoto.min.js
 //@prepros-append vendor/owl.carousel.min.js
 //@prepros-append vendor/isInViewport.min.js
