@@ -12,12 +12,6 @@ $(document).ready(function() {
 
 
 
-  // start inline svg support for IE
-  // -------------------------------
-  svg4everybody();
-
-
-
   // IE polyfill 'object-fit'
   // ------------------------
   objectFitImages();
