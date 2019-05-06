@@ -6,6 +6,15 @@
 
 
 
+// get css breakpoints
+// -------------------
+var bpTiny = parseInt(getComputedStyle(document.body).getPropertyValue('--bp-tiny'));
+var bpSmall = parseInt(getComputedStyle(document.body).getPropertyValue('--bp-small'));
+var bpMedium = parseInt(getComputedStyle(document.body).getPropertyValue('--bp-medium'));
+var bpLarge = parseInt(getComputedStyle(document.body).getPropertyValue('--bp-large'));
+
+
+
 // PART I: things to be done on document.ready
 // ===========================================
 $(document).ready(function() {
@@ -30,6 +39,14 @@ $(document).ready(function() {
   // --------------------------
   $('html').on('click', 'a[href*="#"]:not([href="#"])', function() {
     feeJS.smoothScrollToAnchor();
+  });
+
+
+
+  // sliders
+  // -------
+  $('.js-initHeroSlider').each(function() {
+    feeJS.initHeroSlider(this);
   });
 
 

@@ -17,13 +17,13 @@
 
   // make scrollbar visible on mobile devices
   // ----------------------------------------
-  &::-webkit-scrollbar {
+  &:-webkit-scrollbar {
     -webkit-appearance: none;
     width: 14px;
     height: 14px;
   }
 
-  &::-webkit-scrollbar-thumb {
+  &:-webkit-scrollbar-thumb {
     border-radius: 8px;
     border: 3px solid #fff;
     background-color: rgba(0, 0, 0, .3);

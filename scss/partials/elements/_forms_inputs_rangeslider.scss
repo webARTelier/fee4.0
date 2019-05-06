@@ -48,7 +48,7 @@
 
 
 
-    &::-webkit-slider-runnable-track {
+    &:-webkit-slider-runnable-track {
       @include size(var(--rangeslider-track-width), var(--rangeslider-track-height));
 
       border-radius: var(--rangeslider-track-border-radius);
@@ -57,7 +57,7 @@
 
 
 
-    &::-webkit-slider-thumb {
+    &:-webkit-slider-thumb {
       @include size(var(--rangeslider-thumb-size));
 
       -webkit-appearance: none;
@@ -77,13 +77,13 @@
 
 
 
-    &:focus::-webkit-slider-runnable-track {
+    &:focus:-webkit-slider-runnable-track {
       background: var(--rangeslider-track-color);
     }
 
 
 
-    &::-moz-range-track {
+    &:-moz-range-track {
       @include size(var(--rangeslider-track-width), var(--rangeslider-track-height));
 
       background: var(--rangeslider-track-color);
@@ -92,7 +92,7 @@
 
 
 
-    &::-moz-range-thumb {
+    &:-moz-range-thumb {
       @include size(var(--rangeslider-thumb-size));
 
       border: 2px solid var(--rangeslider-thumb-border-color);
@@ -111,7 +111,7 @@
 
 
 
-    &::-ms-track {
+    &:-ms-track {
       @include size(var(--rangeslider-track-width), var(--rangeslider-track-height));
 
       // remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead
@@ -130,15 +130,15 @@
 
 
 
-    &::-ms-fill-lower,
-    &::-ms-fill-upper {
+    &:-ms-fill-lower,
+    &:-ms-fill-upper {
       background: var(--rangeslider-track-color);
       border-radius: var(--rangeslider-track-border-radius);
     }
 
 
 
-    &::-ms-thumb {
+    &:-ms-thumb {
       @include size(var(--rangeslider-thumb-size));
 
       margin-top: 0;
@@ -149,8 +149,8 @@
 
 
 
-    &:focus::-ms-fill-lower,
-    &:focus::-ms-fill-upper {
+    &:focus:-ms-fill-lower,
+    &:focus:-ms-fill-upper {
       background: var(--rangeslider-track-color);
     }
   }

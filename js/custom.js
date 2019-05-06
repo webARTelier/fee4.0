@@ -39,6 +39,7 @@ var feeJS = feeJS || {};
 // current project!
 
 //@prepros-append partials/_fee_func_common.js
+//@prepros-append partials/_fee_func_sliders.js
 //@prepros-append partials/_fee_func_forms.js
 //@prepros-append partials/_fee_func_rangeslider.js
 

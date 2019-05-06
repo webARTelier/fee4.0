@@ -50,8 +50,13 @@ $bp: (
 
 :root {
 
-  // provide current viewport name for javascript
-  // --------------------------------------------
+  // provide current viewport settings for javascript
+  // ------------------------------------------------
+  --bp-tiny:                                #{bp('tiny')};
+  --bp-small:                               #{bp('small')};
+  --bp-medium:                              #{bp('medium')};
+  --bp-large:                               #{bp('large')};
+
   --vp-name:                                tiny;
 
 

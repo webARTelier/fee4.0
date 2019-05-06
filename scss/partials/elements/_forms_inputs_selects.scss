@@ -19,7 +19,7 @@
   border-radius: var(--input-border-radius);
   width: 100%;
 
-  border: var(--input-border-width) solid var(--input-color-border);
+  border: var(--input-border-width) solid var(--input-border-color);
   padding: var(--input-padding-y) 2.5em var(--input-padding-y) var(--input-padding-x);
   cursor: pointer;
 
@@ -29,7 +29,7 @@
   transition: border-color var(--anim-dur) var(--anim-ease);
 
   &:focus {
-    border-color: var(--input-color-border-focus);
+    border-color: var(--input-border-color-focus);
   }
 
   // new arrow image
