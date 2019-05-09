@@ -72,13 +72,16 @@
 
     &:focus {
       outline: none;
-      border: none;
     }
 
 
 
     &:focus::-webkit-slider-runnable-track {
+<<<<<<< HEAD
       background: var(--rangeslider-track-color);
+=======
+      background-color: var(--rangeslider-track-color);
+>>>>>>> FEE4.0/master
     }
 
 
@@ -86,7 +89,7 @@
     &::-moz-range-track {
       @include size(var(--rangeslider-track-width), var(--rangeslider-track-height));
 
-      background: var(--rangeslider-track-color);
+      background-color: var(--rangeslider-track-color);
       border-radius: var(--rangeslider-track-border-radius);
     }
 
@@ -97,7 +100,7 @@
 
       border: 2px solid var(--rangeslider-thumb-border-color);
       border-radius: var(--rangeslider-thumb-border-radius);
-      background: var(--rangeslider-thumb-color);
+      background-color: var(--rangeslider-thumb-color);
     }
 
 
@@ -139,6 +142,7 @@
 
 
 
+<<<<<<< HEAD
     &::focus:-ms-fill-lower,
     &::focus:-ms-fill-upper {
       background-color: var(--rangeslider-track-color);
@@ -146,6 +150,8 @@
 
 
 
+=======
+>>>>>>> FEE4.0/master
     &::-ms-thumb {
       @include size(var(--rangeslider-thumb-size));
 
@@ -153,6 +159,16 @@
       border: 2px solid var(--rangeslider-thumb-border-color);
       border-radius: var(--rangeslider-thumb-border-radius);
       background-color: var(--rangeslider-thumb-color);
+<<<<<<< HEAD
+=======
+    }
+
+
+
+    &:focus::-ms-fill-lower,
+    &:focus::-ms-fill-upper {
+      background-color: var(--rangeslider-track-color);
+>>>>>>> FEE4.0/master
     }
   }
 

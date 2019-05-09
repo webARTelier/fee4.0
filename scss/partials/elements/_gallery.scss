@@ -28,6 +28,8 @@
   &__imgBox {
     @include absolute(top 0 left 0);
     @include size(100%);
+
+    text-decoration: none;
   }
 
 
