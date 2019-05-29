@@ -70,7 +70,7 @@ $(document).ready(function() {
   // to prevent closing open item(s) when clicking on closed item
   // ------------------------------------------------------------
   $('html').on('click', '.js-toggleAccordion', function() {
-    feeJS.toggleAccordion(this);
+    feeJS.toggleAccordion(this, 'openMulitiple');
   });
 
 
