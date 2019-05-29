@@ -75,61 +75,6 @@ feeJS.smoothScrollToAnchor = function() {
 
 
 
-// show target element
-// -------------------
-
-// NOTE: target element will be closed
-// on any click outside target element
-// -----------------------------------
-feeJS.showTarget = function(target) {
-
-  // get target element
-  // ------------------
-  var targetElement = $($(target).data('show'));
-
-  // add namespaced listener for closing element
-  // -------------------------------------------
-  $(document).on('mouseup.closeElement', function(e) {
-
-    // if click target isn't the container
-    // nor a descendant of the container ...
-    // -------------------------------------
-    if(!targetElement.is(e.target) && targetElement.has(e.target).length === 0) {
-
-      // ... hide target element
-      // -----------------------
-      targetElement.removeClass('is-visible');
-      $('.wrapper-content').removeClass('is-shifted');
-
-      // ... and remove namespaced listener
-      // ----------------------------------
-      $(document).off('mouseup.closeElement');
-    }
-  });
-
-  // show target element
-  // -------------------
-  targetElement.addClass('is-visible');
-}
-
-
-
-// -----------------------------------------------------------------------
-
-
-
-// hide target element
-// -------------------
-feeJS.hideTarget = function(target) {
-  $($(target).data('hide')).removeClass('is-visible');
-}
-
-
-
-// -----------------------------------------------------------------------
-
-
-
 // show element below given scroll position
 // ----------------------------------------
 feeJS.showAtScroll = function(target, scrollPosition) {
@@ -218,13 +163,13 @@ feeJS.toggleAccordion = function(target, openMultiple) {
     $('.js-toggleAccordion')
       .not(target)
       .removeClass('is-open')
-      .next('.c-accordion__content')
+      .next('.js-accordionContent')
       .hide('fast');
   }
 
   $(target)
     .toggleClass('is-open')
-    .next('.c-accordion__content')
+    .next('.js-accordionContent')
     .slideToggle('fast');
 }
 
@@ -261,12 +206,12 @@ feeJS.openModal = function(target) {
 
   // close all other modals
   // ----------------------
-  $('.c-modal').removeClass('is-visible');
+  $('.js-modal').removeClass('is-visible');
 
   // open modal and page overlay
   // ---------------------------
-  $('.c-modal' +  target).addClass('is-visible');
-  $('.c-pageOverlay.js-closeModal').addClass('is-visible');
+  $('.js-modal' +  target).addClass('is-visible');
+  $('.js-pageOverlay.js-closeModal').addClass('is-visible');
 }
 
 
@@ -285,8 +230,8 @@ feeJS.closeModal = function() {
 
   // close modal and overlay
   // -----------------------
-  $('.c-modal').removeClass('is-visible');
-  $('.c-pageOverlay').removeClass('is-visible');
+  $('.js-modal').removeClass('is-visible');
+  $('.js-pageOverlay').removeClass('is-visible');
 }
 
 

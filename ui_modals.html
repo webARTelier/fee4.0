@@ -44,7 +44,7 @@
 
           <!-- content wrapper -->
           <div class="wrapper u-spaceTop">
-            <button class="c-button js-openModal" data-target=".test">Modal öffnen</button>
+            <button class="c-button js-openModal" data-target=".i-test">Modal öffnen</button>
           </div>
           <!-- end content wrapper -->
 
@@ -61,35 +61,35 @@
 
 
     <!-- modal 'test' -->
-    <div class="c-modal test u-shadow--modal">
+    <div class="c-modal i-test u-shadow--modal js-modal">
       <div class="c-modal__close js-closeModal">
         <svg class="c-modal__icon"><use xlink:href="images/icons.svg#icon-close"></use></svg>
       </div>
       <h2 class="c-headline c-headline--2">Test-Modal</h2>
       <p>Hier steht der Modal-Text</p>
       <p>&nbsp;</p>
-      <a class="c-link js-switchModal" href="javascript:;" data-target=".switch">» anderes Modal öffnen</a>
+      <a class="c-link js-switchModal" href="javascript:;" data-target=".i-switch">» anderes Modal öffnen</a>
     </div>
     <!-- end modal 'test' -->
 
 
 
     <!-- modal 'switch' -->
-    <div class="c-modal switch u-shadow--modal">
+    <div class="c-modal i-switch u-shadow--modal js-modal">
       <div class="c-modal__close js-closeModal">
         <svg class="c-modal__icon"><use xlink:href="images/icons.svg#icon-close"></use></svg>
       </div>
       <h2 class="c-headline c-headline--2">Anderes Modal</h2>
       <p>Hier steht der Modal-Text</p>
       <p>&nbsp;</p>
-      <a class="c-link js-switchModal" href="javascript:;" data-target=".test">« zurück zum ersten Modal</a>
+      <a class="c-link js-switchModal" href="javascript:;" data-target=".i-test">« zurück zum ersten Modal</a>
     </div>
     <!-- end modal 'switch' -->
 
 
 
     <!-- overlay for closing modals -->
-    <div class="c-pageOverlay dark js-closeModal" onclick=""></div>
+    <div class="c-pageOverlay c-pageOverlay--dark js-pageOverlay js-closeModal" onclick=""></div>
     <!-- end overlay for closing modals -->
 
 

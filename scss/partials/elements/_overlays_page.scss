@@ -22,21 +22,21 @@
   &.is-visible {
     visibility: visible;
     opacity: 1;
+  }
 
 
 
-    // dark overlay
-    // ------------
-    &--dark {
-      background-color: rgba(black, 0.7);
-    }
+  // dark overlay
+  // ------------
+  &--dark {
+    background-color: rgba(black, 0.7);
+  }
 
 
 
-    // light overlay
-    // -------------
-    &--light {
-      background-color: rgba(white, 0.7);
-    }
+  // light overlay
+  // -------------
+  &--light {
+    background-color: rgba(white, 0.7);
   }
 }
