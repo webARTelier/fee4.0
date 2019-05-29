@@ -190,7 +190,7 @@ feeJS.toggleTab = function(target) {
 
   var tabTarget = $(target).attr('data-tabtarget');
 
-  $('.js-chooseTab, .js-toggleTab').removeClass('is-active');
+  $('.js-chooseTab, .js-tabContent').removeClass('is-active');
   $(target).addClass('is-active');
   $(tabTarget).addClass('is-active');
 }

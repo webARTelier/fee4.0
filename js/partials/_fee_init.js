@@ -59,7 +59,7 @@ $(document).ready(function() {
 
   // toggle tabs
   // -----------
-  $('html').on('click', '[data-tabtarget]', function() {
+  $('html').on('click', '.js-chooseTab', function() {
     feeJS.toggleTab(this);
   });
 
