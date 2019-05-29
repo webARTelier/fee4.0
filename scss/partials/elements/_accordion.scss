@@ -34,7 +34,7 @@
       background-color: var(--color-contrast);
     }
 
-    &.is-open {
+    .is-open & {
       background-color: var(--color-contrast);
     }
   }

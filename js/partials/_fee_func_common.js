@@ -162,15 +162,20 @@ feeJS.toggleAccordion = function(target, openMultiple) {
   if(openMultiple == false) {
     $('.js-toggleAccordion')
       .not(target)
+      .closest('.js-accordion')
       .removeClass('is-open')
-      .next('.js-accordionContent')
+      .find('.js-accordionContent')
       .hide('fast');
   }
 
   $(target)
-    .toggleClass('is-open')
-    .next('.js-accordionContent')
+    .closest('.js-accordion')
+    .find('.js-accordionContent')
     .slideToggle('fast');
+
+  $(target)
+    .closest('.js-accordion')
+    .toggleClass('is-open');
 }
 
 
