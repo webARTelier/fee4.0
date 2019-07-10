@@ -37,8 +37,11 @@ $(document).ready(function() {
 
   // smooth scrolling to anchor
   // --------------------------
-  $('html').on('click', 'a[href*="#"]:not([href="#"])', function() {
-    feeJS.smoothScrollToAnchor();
+  $('a[href*="#"]')
+    .not('[href="#"]')
+    .not('[href="#0"]')
+    .click(function(event) {
+    feeJS.smoothScrollToAnchor(this);
   });
 
 
