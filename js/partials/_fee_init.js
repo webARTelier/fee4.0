@@ -37,8 +37,11 @@ $(document).ready(function() {
 
   // smooth scrolling to anchor
   // --------------------------
-  $('html').on('click', 'a[href*="#"]:not([href="#"])', function() {
-    feeJS.smoothScrollToAnchor();
+  $('a[href*="#"]')
+    .not('[href="#"]')
+    .not('[href="#0"]')
+    .click(function(event) {
+    feeJS.smoothScrollToAnchor(this);
   });
 
 
@@ -59,7 +62,7 @@ $(document).ready(function() {
 
   // toggle tabs
   // -----------
-  $('html').on('click', '[data-tabtarget]', function() {
+  $('html').on('click', '.js-chooseTab', function() {
     feeJS.toggleTab(this);
   });
 
