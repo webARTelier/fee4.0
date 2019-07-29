@@ -1,0 +1,41 @@
+
+
+
+// ================================================================
+
+// FORM LABEL STYLES
+
+// ================================================================
+
+
+
+// labels
+// ------
+.c-label {
+  @include typo-bold;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 18px;
+  color: var(--color-label);
+
+
+
+  &__link {
+    @include typo-bold;
+
+    text-decoration: none;
+    color: var(--color-link);
+
+    // hover state only in desktop view
+    // --------------------------------
+    @include vp-large-up {
+
+      &:hover {
+        color: var(--color-link-hover);
+        text-decoration: underline;
+      }
+    }
+  }
+}
