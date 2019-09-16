@@ -55,13 +55,10 @@
 
 
 
-  &--icon {
+  &__icon {
+    @include absolute(top 0.4em left 0);
+    @include size(0.8em);
 
-    svg {
-      @include absolute(top 0.4em left 0);
-      @include size(0.8em);
-
-      fill: var(--color-main);
-    }
+    fill: var(--color-main);
   }
 }
